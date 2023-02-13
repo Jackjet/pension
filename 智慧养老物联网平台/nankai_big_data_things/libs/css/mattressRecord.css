@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    overflow: hidden;
+    padding: 0;
+    font-family: Arial, 'Microsoft YaHei';
+    width: 100%;
+    height: 100%;
+    min-width: 1024px;
+    background: url("../image/banner.jpg") no-repeat;
+    background-size: 100% 100%;
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='../image/banner.jpg', sizingMethod='scale');
+}
+
+/* 头 */
+.container {
+    width: 100%;
+    height: 6vh;
+    display: block;
+}
+
+/* 操作列 */
+.header {
+    position: relative;
+    width: 100%;
+    height: 6vh;
+    line-height: 6vh;
+    background-size: 100% 100%;
+    text-align: center;
+    position: absolute;
+    box-sizing: border-box;
+    display: table;
+}
+
+.header span {
+    font-size: 3vh;
+    color: #7ee1e5;
+}
+
+.header .year-title {
+    margin-left: 10px;
+    font-size: 2vh;
+    color: #7ee1e5;
+}
+
+.main-tab {
+    position: absolute;
+    right: 2%;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 2vh;
+    color: #87D8F3;
+}
+
+.main-tab a {
+    color: #7ee1e5;
+}
+.time-box {
+    position: absolute;
+    left: 2%;
+    top: 7%;
+    font-size: 2vh;
+    color: #87D8F3;
+}
+
+.time-box .time {
+    /*font-weight: bold;*/
+    font-size: 2.3vh;
+}
+
+.time-box .date {
+    margin-left: 1.5vh;
+    font-size: 2.3vh !important;
+}
+
+.back {
+    display: inline-block;
+    margin-right: 0.7vw;
+    margin-bottom: -0.7vh;
+    background: url('../image/index.png');
+    background-size: 100% 100%;
+    height: 20px;
+    width: 20px;
+}
+.reload {
+    display: inline-block;
+    margin-left: 1vw;
+    margin-right: 0.7vw;
+    margin-bottom: -0.7vh;
+    background: url('../image/reload.png');
+    background-size: 100% 100%;
+    height: 20px;
+    width: 20px;
+}
+.tabLayui{
+    height: calc(100% - 10vh);
+    padding: 0 3vh;
+}
+.query-condition{
+    /* height: 10vh; */
+    /* display: flex; */
+    margin-top: 3vh;
+}
+.query-list{
+    margin-top: -10px;
+}
+/* 改变layui样式 */
+.layui-form-label{
+    width: 70px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    padding: 0 10px !important;
+    font-size: 12px !important;
+    background: none !important;
+    color: #fff;
+    margin-top: 5px;
+}
+.layui-input-block{
+    margin-left: 70px !important;
+}
+.layui-input{
+    height: 30px !important;
+    width: 150px !important;
+    background: none !important;
+    margin-top: 5px;
+}
+.layui-btn-sm{
+    background: none !important;
+    border: 1px solid #fff;
+}
+/* 表格样式 */
+.layui-table thead tr,.layui-table{
+    background: none !important;
+}
+.layui-table th {
+    color: #7ee1e5;
+    font-weight: bold;
+}
+.layui-table td{
+    color: #7ee1e5;
+}
+
+.page-paging{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+.layui-laypage a, .layui-laypage span{
+    background: none !important;
+    color: #fff;
+}
+.layui-laypage input{
+    width: 50px !important;
+}
+.layui-laypage-skip{
+    color: #fff !important;
+}
+.layui-laypage-btn{
+    background: none !important;
+}
+.layui-laypage-em{
+    background: none !important;
+}
+.layui-laypage-curr em{
+    color:#009688 !important;
+}
+/* 弹框 */
+.bullet-frame{
+    width: 400px;
+}
+.bullet-frame p{
+    line-height: 30px;
+}
+.bullet-frame .equipment-id{
+    text-align: end;
+}
+.frame-name,.frame-equipment{
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+.frame-name{
+    color: red;
+}
+.prompt-content{
+    margin-bottom: 15px;
+}
+.layui-layer-content{
+    width: 400px !important;
+}

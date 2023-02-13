@@ -1,0 +1,264 @@
+<template>
+  <el-main>
+    <el-col :span="24">
+      <el-form  :inline="true" class='el-InputForm' >
+        <el-form-item label="街道:">
+           <el-select v-model="search.streetId" placeholder="请选择街道"
+                       size="medium" clearable>
+              <el-option
+                v-for="item in orderStatusList"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+        </el-form-item>
+        <el-form-item label="社区:">
+            <el-select v-model="search.communityId" placeholder="请选择社区"
+                       size="medium" clearable>
+              <el-option
+                v-for="item in orderStatusList1"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </el-form-item>
+        <el-form-item>
+          <el-button type="primary" size='medium' icon="el-icon-search" @click="SearchNoteList">查询</el-button>
+          <el-button type="primary" size='medium' icon="el-icon-folder-opened" @click="exportExcel">导出</el-button>
+        </el-form-item>
+      </el-form>
+    </el-col>
+    <el-col :span="24">
+      <!-- 表格 -->
+      <tableForm
+        ref="trigger"
+        :table-form='table'
+        @getList='getList'
+        @pageChange='pageChange'>
+      </tableForm>
+    </el-col>
+  </el-main>
+</template>
+
+<script>
+import tableForm from 'plugin/table'
+
+export default {
+  components: {
+    tableForm
+  },
+
+  data () {
+    return {
+      id: '',
+      title: '',
+      isShow: false,
+      form: {
+        name: '',
+        remark: ''
+      },
+      table: {
+        list: {
+          header: [
+            {
+              label: '社区',
+              field: 'communityName'
+            },
+            {
+              label: '普通老人',
+              field: 'ordinaryNum'
+            },
+            {
+              label: '居家老人',
+              field: 'homeNum'
+            },
+            {
+              label: '合计',
+              field: 'sum'
+            }
+          ],
+
+          data: [],
+        },
+
+        paging: {
+          total: 0,
+          currentPage: 1,
+          limit: 10
+        }
+      },
+      search: {
+        state: '',
+        state1: '',
+      },
+      searchReal: {
+      },
+      options:{
+        streetId:[],
+        communityId:[]
+      }
+    }
+  },
+
+  mounted () {
+    this.getList()
+    this.getcommunity()
+    this.getstreet()
+  },
+  computed: {
+    orderStatusList () {
+      return this.options.streetId
+    },
+     orderStatusList1 () {
+      return this.options.communityId
+    }
+  },
+  methods: {
+    SearchNoteList () {
+      let that = this
+      Object.entries(that.search).map((item, index) => {
+        that.searchReal[item[0]] = that.search[item[0]]
+      })
+      console.log(that.searchReal)
+      this.table.paging.currentPage = 1
+      this.getList()
+    },
+    async exportExcel(){
+      let that = this
+      Object.entries(that.search).map((item, index) => {
+        that.searchReal[item[0]] = that.search[item[0]]
+      })
+      this.table.paging.currentPage = 1
+      try {
+        if (that.searchReal.time) {
+          that.searchReal.startTime = that.searchReal.time[0]
+          that.searchReal.endTime = that.searchReal.time[1]
+        } else {
+          that.searchReal.startTime = ''
+          that.searchReal.endTime = ''
+        }
+        let findUrl = this.api.reports.countByUserToExcel
+        let url = findUrl + '?page=' + this.table.paging.currentPage + '&size=' + this.table.paging.limit
+        let obj = {
+           'streetId': that.searchReal.streetId,
+            'communityId': that.searchReal.communityId,
+        }
+        that.$axios({
+          method: 'get',
+          url: process.env.VUE_APP_URL + url,
+          responseType: 'blob',
+          params: obj,
+          headers: {
+            'Authorization': 'token ' + this.common.session('currentUser').token
+          }
+        }).then((data) => {
+          if (data.status === 200) {
+            that.$message.success('导出成功')
+          }
+          if (!data) {
+            return
+          }
+          let url = window.URL.createObjectURL(data.data)
+          let link = document.createElement('a')
+          link.style.display = 'none'
+          link.href = url
+          link.setAttribute('download', '老人订单统计.xls')
+          document.body.appendChild(link)
+          link.click()
+        })
+      } catch (even) {
+        that.$message.error('数据导出失败')
+      }
+    },
+     // 社区列表
+    async getcommunity(){
+      try {
+        let that = this
+        let url = this.api.reports.communityList
+        const response = await this.request.dataGet(that, url, {})
+        let arr = []
+        response.data.content.forEach((v,i)=>{
+          let obj = {}
+          obj.label = v.name
+          obj.value = v.id
+          arr.push(obj)
+        })
+        this.options.communityId = arr
+      } catch (even) {
+        that.$message.error('数据获取失败')
+      }
+    },
+     // 街道列表
+    async getstreet(){
+      try {
+        let that = this
+        let url = this.api.reports.streetList
+        const response = await this.request.dataGet(that, url, {})
+        let arr = []
+        response.data.content.forEach((v,i)=>{
+          let obj = {}
+          obj.label = v.name
+          obj.value = v.id
+          arr.push(obj)
+        })
+        this.options.streetId = arr
+      } catch (even) {
+        that.$message.error('数据获取失败')
+      }
+    },
+    // 列表
+    async getList () {
+      const that = this
+      try {
+        let findUrl = this.api.reports.countByUser
+        let url = findUrl + '?page=' + this.table.paging.currentPage + '&size=' + this.table.paging.limit
+        let obj = {
+          'streetId': that.searchReal.streetId,
+          'communityId': that.searchReal.communityId,
+        }
+        const response = await this.request.dataGet(that, url, obj)
+         let sum = this.countSum(response)
+        response.data.content.push(sum)
+        this.$refs.trigger.loading = false
+        that.table.list.data = response.data.content
+        that.table.paging.total = response.data.totalElements
+      } catch (even) {
+        that.$message.error('数据获取失败')
+      }
+    },
+ countSum(value){
+      let obj = {}
+      let that = this
+      value.data.content.forEach((v,i)=>{
+        that.table.list.header.forEach((val,index)=>{
+            if(index == 0){
+              obj[val.field] = '合计'
+            }else{
+              if(isNaN(v[val.field])){
+                if(val.field in obj){
+                 
+                }else{
+                  obj[val.field] = ''
+                }
+              }else{
+                if(val.field in obj){
+                  obj[val.field] = obj[val.field] + v[val.field]
+                }else{
+                  obj[val.field] = v[val.field]
+                }
+              }
+            }
+        })
+      })
+      return obj
+    },
+    pageChange (val) {
+      this.table.paging.limit = val.limit
+      this.table.paging.currentPage = val.page
+      this.getList()
+    }
+  }
+}
+</script>

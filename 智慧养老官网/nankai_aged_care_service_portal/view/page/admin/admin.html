@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/admin/admin.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../plugin/wow/wow.min.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/publicModule.js"></script>
+    <script type='text/javascript' src='../../../libs/js/admin/admin.js'></script>
+    <title>智慧养老云服务平台</title>
+</head>
+
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item layui-selete"></li>
+                    <li class="layui-nav-item layui-this">
+                        <a href="../../index.html">首页</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../oneStop/oneStop.html?level=U2Vjb25kbGV2ZWw=">一站式服务</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../article/article.html?level=U2Vjb25kbGV2ZWw=&move=zxjj">中心简介</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=xwtz">新闻通知</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=zcfg'>政策法规</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yscs'>养生常识</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yxal'>优秀案例</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../activity/activty.html?level=U2Vjb25kbGV2ZWw='>老人活动</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--<div class='layui-main1'>-->
+    <!--<div class='layui-row dataStat'>-->
+    <!--<div class='layui-col-xs8 pdt10'>-->
+    <!--<h6 class="inline pd5">首页</h6><i class="layui-icon">></i><h6 class="inline pd5"><a>我的</a></h6><i class="layui-icon">></i><h6 class="inline pd5"><a id='title'>全部订单</a></h6>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class='layui-main1'>
+        <div class='layui-row'>
+            <div class='layui-col-xs2'>
+                <div class='nav_admin' id="admin">
+                    <div class="pd10">
+                        <img src="../../../public/images/admin/order.png" class='icon' alt="" />
+                        <span class="mlt5" style="margin-left:5px;vertical-align: bottom;">我的订单</span>
+                    </div>
+                    <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="demo" style="margin-right: 10px;">
+                        <li class="layui-nav-item layui-nav-itemed item" data-url='order/order.html?level=5'>
+                            <a href='javascript:void(0)' class="pdt10" style="color:black; ">
+                                <span style="margin-left:10px;vertical-align: middle;">全部订单</span>
+                            </a>
+                        </li>
+                        <li class="layui-nav-item item" data-url='order/order.html?level=0'>
+                            <a href='javascript:void(0)'>
+                                <span style="margin-left:10px;">待接单</span>
+                                <span class='right'><i class="layui-icon">&#xe602;</i></span>
+                                <span class='num right zero'></span>
+                            </a>
+                        </li>
+                        <li class="layui-nav-item item" data-url='order/order.html?level=1'>
+                            <a href='javascript:void(0)'>
+                                <span style="margin-left:10px;">已接单</span>
+                                <span class='right'><i class="layui-icon">&#xe602;</i></span>
+                                <span class='num right one'></span>
+                            </a>
+                        </li>
+                        <li class="layui-nav-item item" data-url='order/order.html?level=2'>
+                            <a href='javascript:void(0)'>
+                                <span style="margin-left:10px;">服务中</span>
+                                <span class='right'><i class="layui-icon">&#xe602;</i></span>
+                                <span class='num right two'></span>
+                            </a>
+                        </li>
+                        <li class="layui-nav-item item" data-url='order/order.html?level=3'>
+                            <a href='javascript:void(0)'>
+                                <span style="margin-left:10px;">服务结束</span>
+                                <span class='right'><i class="layui-icon">&#xe602;</i></span>
+                                <span class='num right three'></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="pd10">
+                        <img src="../../../public/images/admin/person.png" class='icon' alt="" />
+                        <span class="mlt5" style="margin-left:5px;vertical-align: bottom;">个人信息</span>
+                    </div>
+                    <ul class="layui-nav second layui-nav-tree layui-inline" lay-filter="demo"
+                        style="margin-right: 10px;">
+                        <li class="layui-nav-item item" data-url='account/account.html?level='>
+                            <a href='javascript:void(0)' class="pdt10" style="color:black; "> <span
+                                    style="margin-left:10px;vertical-align: middle;">账户设置</span> <span class='right'><i
+                                        class="layui-icon">&#xe602;</i></span></a>
+                        </li>
+                        <li class="layui-nav-item item" data-url='userInfo/userInfo.html?level=0'>
+                            <a href='javascript:void(0)'>
+                                <span style="margin-left:10px;">用户信息</span>
+                                <span class='right'><span class='num' id='isPerfect'></span><i
+                                        class="layui-icon">&#xe602;</i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class='layui-col-xs10'>
+                <div class='nav_main' id='nav_main'>
+                    <iframe id="iframe" scrolling="no" runat="server" frameborder="0" scrolling="auto"
+                        src='order/order.html?level='></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

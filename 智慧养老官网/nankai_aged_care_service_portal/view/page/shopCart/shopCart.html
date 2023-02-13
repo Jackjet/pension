@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='../../../public/common/css/frameWork.css' rel='stylesheet' type='text/css' />
+    <link href="../../../libs/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/shopCart/shopCart.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../plugin/wow/wow.min.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/publicModule.js"></script>
+    <script type="text/javascript" src="../../../libs/js/shopCart/shopCart.js"></script>
+    <title>智慧养老服务平台</title>
+</head>
+<body>
+<header></header>
+<nav>
+    <div class='layui-row'>
+        <div class='layui-main'>
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item layui-selete"></li>
+                <li class="layui-nav-item layui-this">
+                    <a href="../../index.html">首页</a>
+                </li>
+                <li class="layui-nav-item  layui-selete">
+                    <a href="../oneStop/oneStop.html?level=U2Vjb25kbGV2ZWw="  >一站式服务</a>
+                </li>
+
+                <li class="layui-nav-item">
+                    <a href="../article/article.html?level=U2Vjb25kbGV2ZWw=&move=zxjj" >中心简介</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=xwtz" >新闻通知</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=zcfg'>政策法规</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yscs'>养生常识</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yxal' >优秀案例</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href='../activity/activty.html?level=U2Vjb25kbGV2ZWw=' >老人活动</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class='layui-main2' >
+    <div class='layui-row dataStat'>
+        <div class='layui-col-xs8'>
+            <!-- <h6 class="inline pd5">首页</h6><i class="layui-icon">></i><h6 class="inline pd5"><a>一站式服务</a></h3><i class="layui-icon">></i><h6 class="inline pd5"><a>确认下单</a></h6> -->
+        </div>
+    </div>
+</div>
+<div class='layui-main2 pd20  hboder'>
+
+    <h3 class='title'>我的购物车</h3>
+
+    <div class="layui-tab-content">
+        <div class='table_header'>
+            <div class="layui-col-xs1">
+                <form class="layui-form" lay-filter="all" style='margin: 0 auto; width: 125px' action="">
+                    <div class="layui-form-item">
+                        <input type="checkbox" lay-filter="all" name="like[write]">全选
+                    </div>
+                </form>
+            </div>
+            <div class="layui-col-xs3 text_cen">
+                服务项
+            </div>
+            <div class="layui-col-xs2 text_cen">
+                服务金额
+            </div>
+            <div class="layui-col-xs1 text_cen">
+                服务性质
+            </div>
+            <div class="layui-col-xs4 text_cen">
+                期望到达时间
+            </div>
+            <div class="layui-col-xs1 center">
+                操作
+            </div>
+        </div>
+        <ul class='order'>
+            <div data-loader="circle" class='loading hot-loading'></div>
+            <script id="order-cell" type="text/html">
+                {{each content as value i}}
+                <li>
+                    <div  class="orde layui-col-xs12" style='height: 129px;'>
+                        <div class='layui-col-xs4  pdt10  h110' style=" height: 80px; line-height: 80px;" >
+                            <form class="layui-form service" lay-filter="item" style='margin: 0 auto; width: 125px;  float: left' action="">
+                                <div class="layui-form-item">
+                                    <input type="checkbox" value='{{value.id}}' lay-filter="item" name="like[write]">
+                                </div>
+                            </form>
+                            <p class="serviceName" data-id='{{value.id}}'>{{value.serviceProName}}</p>
+                        </div>
+                        <div class='layui-col-xs2 text_cen pdt10  h110'>
+                            <p  class="lineh80" data-money='{{value.money}}' style='color: #FF6600'>￥{{value.money}}</p>
+
+                        </div>
+                        <div class='layui-col-xs1 text_cen pdt10  h110'>
+                            {{if value.serviceProType == 0}}
+                            <p class="mlt20">服务时长</p>
+                            <p>{{value.serviceProTime}}小时<p>
+                            {{else if value.serviceProType == 1}}
+                            <p class="mlt20">服务次数</p>
+                            <p>{{value.serviceProTime}}次<p>
+                            {{else if value.serviceProType == 2}}
+                            <p class="mlt20">{{value.unit}}</p>
+                            <p>{{value.num}}<p>
+                            {{/if}}
+
+                        </div>
+
+                        <div class='layui-col-xs4 text_cen pdt10  h110'>
+                            <p class="lineh80 expectTime">{{value.expectTime1}}</p>
+                        </div>
+
+                        <div class='layui-col-xs1 text_cen pdt10  h110'>
+                            <p id='cancel' class='lineh80 cursor' data-id='{{value.id}}' data-index='{{i}}'>删除<p>
+                        </div>
+
+
+                    </div>
+                    <div class='message'>
+                        <p class='fll'>服务手机号：{{value.userPhone}}</p>
+                        <p class='fll'>服务商：{{value.providerName}}</p><br>
+                        <p>服务详细地址：{{value.areaName}}{{value.streetName}}{{value.communityName}}{{value.address}}</p>
+                    </div>
+                </li>
+                {{/each}}
+                {{if content.length === 0}}
+                <div class="nodata">
+                    <i class="iconfont TanSantishi"></i>暂无数据 ！
+                </div>
+                {{/if}}
+            </script>
+        </ul>
+    </div>
+    <div class='bottom'>
+        <form class="layui-form" lay-filter="all1" style='margin: 0 auto; width: 125px; float: left' action="">
+            <div class="layui-form-item">
+                <input type="checkbox" lay-filter="all1" name="like[write]">全选
+            </div>
+        </form>
+        <a class='flt cursor' id='clean'> 清理购物车 </a>
+        <a class="layui-btn reserve flr">立即下单</a>
+        <p class='flr'>合计：<span class='total' style='color: #FF6600'> ￥0</span></p>
+    </div>
+</div>
+<footer></footer>
+</body>
+</html>

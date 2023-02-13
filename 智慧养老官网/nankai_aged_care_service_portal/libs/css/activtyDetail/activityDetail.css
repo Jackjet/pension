@@ -1,0 +1,244 @@
+body {
+    background-color: #f6f7fb;
+}
+
+.banner img {
+    width: 100%;
+    min-width: 1200px;
+}
+
+.banner {
+    margin-bottom: 20px;
+}
+
+.city_new_left {
+    width: 97%;
+    min-height: 200px;
+    background: white;
+    padding-bottom: 10px;
+}
+
+.city_new_right {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 200px;
+    background: white;
+}
+
+.city_new_left h2 {
+    margin: 0px 20px;
+    padding-top:20px;
+    border-bottom: 1px solid #c10000;
+}
+
+.city_new_left h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.city_new_left h2 p i {
+    margin-right: 10px;
+}
+
+.city_new_left h2 p a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.city_new_left h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.city_new_left h2 > i {
+    color: rgb(94, 94, 94);
+    font-size: 12px;
+}
+
+.city_new_right h2 {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #c10000;
+    color: #fff;
+    padding: 0 15px;
+}
+
+.main_list_left {
+    min-height: 600px;
+}
+
+.main_list_left li {
+    height: 50px;
+    padding: 0px 20px;
+    line-height: 50px;
+    border-bottom: 1px dashed #e7e7e7;
+}
+
+.main_list_left li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.main_list_left li span {
+    display: inline-block;
+    width: 80%;
+}
+
+.main_list_left li p {
+    font-size: 14px;
+    color: #999;
+    float: right;
+}
+
+#laypage {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+}
+
+.city_new_right ul li {
+    padding:0px 20px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px dashed #e7e7e7;
+}
+
+.city_new_right ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.city_new_right ul li:nth-last-child(1) {
+    border:none;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.npData {
+    display: none;
+}
+
+.Cityhome {
+    cursor: pointer;
+}
+
+#title{
+    cursor: pointer;
+}
+
+.main_title {
+    width: 95%;
+    text-align: center;
+    font-size: 18px;
+    padding:40px 0px;
+    margin:0px 20px;
+    font-weight: 800;
+}
+
+.main_time {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    padding-bottom: 40px;
+}
+
+#webHtml {
+    padding: 20px 20px;
+}
+
+#webHtml div {
+    width: 100% !important;
+}
+
+#webHtml div div {
+    margin:0 !important;
+}
+
+#webHtml div div span {
+    width: 100% !important;
+}
+
+#webHtml img {
+    width: 100%;
+}
+
+.hot {
+    min-height: 560px;
+    position: relative;
+}
+
+.hot li:hover {
+    cursor: pointer;
+}
+
+.layui-main2 {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    min-width: 1200px;
+    overflow: hidden;
+}
+
+.dataStat {
+    height: 40px;
+    margin: 20px 0px;
+    line-height: 40px;
+}
+
+.title {
+    padding: 15px;
+    border: 1px dashed #e7e7e7;
+}
+
+.title img {
+    float: left;
+    width: 300px;
+    height: 200px;
+}
+
+.title .item {
+    float: left;
+    margin: 10px 0 0 20px;
+}
+
+.title .item p {
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.title .item span {
+    color: #E85603;
+}
+
+.main_list_left h3 {
+    font-weight: 800;
+    border-left: 3px solid #E85603;
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+#allmap {
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+}

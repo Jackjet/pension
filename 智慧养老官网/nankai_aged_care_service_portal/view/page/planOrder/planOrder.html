@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='../../../public/common/css/frameWork.css' rel='stylesheet' type='text/css' />
+    <link href="../../../libs/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/planOrder/planOrder.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../plugin/wow/wow.min.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/publicModule.js"></script>
+    <script type="text/javascript"
+        src="http://api.map.baidu.com/api?v=3.0&ak=iQ0wqXGPX6lBuvF59FFGf0usHjOVlwRR"></script>
+    <script type="text/javascript" src="../../../libs/js/planOrder/planOrder.js"></script>
+    <title>智慧养老服务平台</title>
+</head>
+
+<body class="boy">
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item layui-selete"></li>
+                    <li class="layui-nav-item layui-this">
+                        <a href="../../index.html">首页</a>
+                    </li>
+                    <li class="layui-nav-item layui-selete">
+                        <a href="../oneStop/oneStop.html?level=U2Vjb25kbGV2ZWw=">一站式服务</a>
+                    </li>
+
+                    <li class="layui-nav-item">
+                        <a href="../article/article.html?level=U2Vjb25kbGV2ZWw=&move=zxjj">中心简介</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=xwtz">新闻通知</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=zcfg'>政策法规</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yscs'>养生常识</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yxal'>优秀案例</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../activity/activty.html?level=U2Vjb25kbGV2ZWw='>老人活动</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <div class='layui-main1 pd10'>
+        <div class='layui-row layui-col-xs5'>
+            <h2><p>首页</p><i class="layui-icon"></i><a>一站式服务</a></h2>
+        </div>
+    </div> -->
+    <div class='layui-main2'>
+        <div class='layui-row dataStat'>
+            <div class='layui-col-xs8'>
+                <!-- <h6 class="inline pd5">首页</h6><i class="layui-icon">></i><h6 class="inline pd5"><a>一站式服务</a></h3><i class="layui-icon">></i><h6 class="inline pd5"><a>确认下单</a></h6> -->
+            </div>
+        </div>
+    </div>
+    <div class='layui-main2 pd20  hboder'>
+        <div class='layui-row h1000'>
+            <div class="layui-row hp35">
+                <span class="pdl10">确认订单信息</span>
+                <span class="pdl10 rl tip">温馨提示：可选择意向服务商为您服务&nbsp;&nbsp;&nbsp;&nbsp;<span class="chooseArea cursor"
+                        style="color:#ff0000;font-size: 18px;font-weight: 900;">立即选择服务商 ></span></span>
+            </div>
+            <div class="layui-row mlt10 text_cen pbg boder ">
+                <div class='layui-col-xs4 bdr'>
+                    <h3 class="inline pd5">服务项</h3>
+                </div>
+                <div class='layui-col-xs4 bdr'>
+                    <h3 class="inline pd5">服务金额</h3>
+                </div>
+                <div class='layui-col-xs4'>
+                    <h3 class="inline pd5 sercise"></h3>
+                </div>
+            </div>
+            <div class="layui-row text_cen  boderlbr ">
+                <div class='layui-col-xs4 bdr'>
+                    <h3 id="serviceName" class="inline pd5"></h3>
+                </div>
+                <div class='layui-col-xs4 bdr'>
+                    <h3 id="serviceMoney" class="inline pd5 cor"></h3>
+                </div>
+                <div class='layui-col-xs4'>
+                    <h3 id="serviceTime" class="inline pd5">
+
+                    </h3>
+                </div>
+            </div>
+            <div class="layui-row mlt15 borBtom h30">
+                <span class="pdl10 tip">下单后预计<span style="color:#f47f3d">一个小时</span>内到达&nbsp;&nbsp;<span
+                        class="chooseTime cursor" style="color:#f47f3d">选择预约服务时间 ></span></span>
+            </div>
+            <div class="layui-row mlt15  h30">
+                <span class="pdl10 tip">服务商名称:&nbsp;&nbsp;<span class="storeName"></span></span>
+                <!-- <button class="layui-btn rl hiden clearSerName">清空</button> -->
+            </div>
+            <div class="layui-row mlt15  h30">
+                <span class="pdl10 tip">期望到达时间:&nbsp;&nbsp;<span class="storeHour"></span></span>
+                <button class=" layui-btn rl hiden clearDaoTime">清空</button>
+            </div>
+
+            <div class="layui-row mlt15  h30">
+                <span class="pdl10 tip">服务天数:&nbsp;&nbsp;<span class="storeTime" style="color:#f47f3d"></span></span>
+            </div>
+
+            <div class="layui-row hp35 mlt20">
+                <span class="pdl10">服务地址</span>
+            </div>
+
+            <div class="layui-row pd10 mlt20 boder">
+                <div class="h30 pdl10">
+                    <span class="name"></span>&nbsp;&nbsp;<span style="width:120px; display:inline-block;"><input
+                            style="height: 23px;" maxlength="11" type="text" name="phone" lay-verify="phone"
+                            autocomplete="off" class="layui-input pdl5 phone"></span>
+                    <span class="upAddress rl cor cursor">修改地址</span>
+                </div>
+                <div class="h30 layui-col-xs11 pdl10 over-hid"><span class=" over-hid ser_address"></span></div>
+            </div>
+            <div class="layui-row mlt10 h30 clearfix">
+                <!-- <p class="pdl10 rl">您需支付总计:&nbsp;&nbsp;<span class="fsize totol"  style="color:#f47f3d">  </span></p> -->
+                <p class="pdl10 rl"></p>
+            </div>
+            <div class="layui-row mlt10 clearfix">
+                <button class="layui-btn rl sumbit" style="margin-right: 10px;">立即下单</button>
+                <!-- <button class="layui-btn rl nearSub" style="margin-right: 10px;">就近下单</button> -->
+                <button class="layui-btn rl shopCart" style="margin-right: 10px;">加入购物车</button>
+            </div>
+
+        </div>
+    </div>
+
+    <footer></footer>
+</body>
+
+</html>

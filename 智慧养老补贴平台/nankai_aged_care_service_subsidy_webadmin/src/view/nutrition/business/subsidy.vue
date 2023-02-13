@@ -1,0 +1,492 @@
+<template>
+  <!-- 百岁补贴业务申请 -->
+  <div class="business-apply-page">
+    <business-process :dataList="applyList"></business-process>
+    <basic-information ref="obtainSonData" :type="type" :bType="bType" bsType="百岁" @formValue="formValue" @registerAddress="registerAddress" @cardTypeChange="cardTypeChange">
+      <el-form ref="formSlot" :model="formSlot" :rules="rulesSlot" label-width="140px">
+        <el-col :span="12">
+          <el-row>
+            <el-col :span="8">
+              <el-form-item label="户籍地、区">
+                <el-input value="南开区" :disabled="true"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="所属街道" prop="homeStreetId" label-width="100px">
+                <el-select size="medium" :disabled="true" v-model="sqjd1" value-key="id" placeholder="所属街道" @change="homeStreetIdHandle">
+                  <el-option v-for="item in streetData" :label="item.name" :value="item" :key="item.id"></el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="所属社区" prop="homeCommunityId" label-width="100px">
+                <el-select size="medium" :disabled="true" v-model="sqjd2" value-key="id" placeholder="所属社区" @change="homeCommunityIdHandle">
+                  <el-option v-for="item in communityData" :label="item.name" :value="item" :key="item.id"></el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>
+          </el-row>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item label="户籍地详细地址" prop="homeAddress">
+            <el-input v-model="formSlot.homeAddress" placeholder="请输入户籍地详细地址"></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-row>
+            <el-col :span="8">
+              <el-form-item label="现居住、区">
+                <el-input value="南开区" :disabled="true"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="所属街道" prop="streetId" label-width="100px">
+                <el-select size="medium" v-model="sqjd3" value-key="id" placeholder="所属街道" @change="streetNameHandle">
+                  <el-option v-for="item in streetData" :label="item.name" :value="item" :key="item.id"></el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="所属社区" prop="communityId" label-width="100px">
+                <el-select size="medium" v-model="sqjd4" value-key="id" placeholder="所属社区" @change="communityIdHandle">
+                  <el-option v-for="item in communityData1" :label="item.name" :value="item" :key="item.id"></el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>
+          </el-row>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item label="现住址" prop="address">
+            <el-input v-model="formSlot.address" placeholder="请输入现住址"></el-input>
+          </el-form-item>
+        </el-col>
+      </el-form>
+    </basic-information>
+    <div class="enclosure-file">
+      <h2 class="enclosure-components-title">申请单相关附件</h2>
+      <el-form ref="formFile" :model="fileJson" :rules="formFileRules" label-width="180px">
+        <el-row :gutter="20">
+          <el-col :span="12">
+            <el-form-item label="申请表" prop="applicationFile">
+              <el-upload :file-list="imgListUrl.applicationFile" :action="actionUrl" :headers="headers" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="(file, fileList)=>handleRemove(file, fileList,'applicationFile')" :on-success="(response, file, fileList)=>handleSuccess(response, file, fileList,'applicationFile')">
+                <i class="el-icon-plus"></i>
+              </el-upload>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12">
+            <el-form-item label="本人户口本资料" prop="householdRegisterFile">
+              <el-upload :file-list="imgListUrl.householdRegisterFile" :action="actionUrl" :headers="headers" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="(file, fileList)=>handleRemove(file, fileList,'householdRegisterFile')" :on-success="(response, file, fileList)=>handleSuccess(response, file, fileList,'householdRegisterFile')">
+                <i class="el-icon-plus"></i>
+              </el-upload>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12">
+            <el-form-item label="本人身份证" prop="idCardFile">
+              <el-upload :file-list="imgListUrl.idCardFile" :action="actionUrl" :headers="headers" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="(file, fileList)=>handleRemove(file, fileList,'idCardFile')" :on-success="(response, file, fileList)=>handleSuccess(response, file, fileList,'idCardFile')">
+                <i class="el-icon-plus"></i>
+              </el-upload>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12">
+            <el-form-item label="银行卡信息" :prop="cardType===2?'cardFile':''">
+              <el-upload :file-list="imgListUrl.cardFile" :action="actionUrl" :headers="headers" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="(file, fileList)=>handleRemove(file, fileList,'cardFile')" :on-success="(response, file, fileList)=>handleSuccess(response, file, fileList,'cardFile')">
+                <i class="el-icon-plus"></i>
+              </el-upload>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12">
+            <el-form-item label="百岁健在证明" prop="aliveFile">
+              <el-upload :file-list="imgListUrl.aliveFile" :action="actionUrl" :headers="headers" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="(file, fileList)=>handleRemove(file, fileList,'aliveFile')" :on-success="(response, file, fileList)=>handleSuccess(response, file, fileList,'aliveFile')">
+                <i class="el-icon-plus"></i>
+              </el-upload>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12">
+            <el-form-item label="委托书" prop="consignerFile">
+              <el-upload :file-list="imgListUrl.consignerFile" :action="actionUrl" :headers="headers" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="(file, fileList)=>handleRemove(file, fileList,'consignerFile')" :on-success="(response, file, fileList)=>handleSuccess(response, file, fileList,'consignerFile')">
+                <i class="el-icon-plus"></i>
+              </el-upload>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12">
+            <el-form-item label="委托人身份证" prop="consignerIdCardFile">
+              <el-upload :file-list="imgListUrl.consignerIdCardFile" :action="actionUrl" :headers="headers" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="(file, fileList)=>handleRemove(file, fileList,'consignerIdCardFile')" :on-success="(response, file, fileList)=>handleSuccess(response, file, fileList,'consignerIdCardFile')">
+                <i class="el-icon-plus"></i>
+              </el-upload>
+            </el-form-item>
+          </el-col>
+          <el-col :span="24">
+            <div class="from-btn">
+              <el-button type="primary" @click="onSubmit('formFile')">立即申请</el-button>
+            </div>
+          </el-col>
+        </el-row>
+      </el-form>
+    </div>
+    <el-dialog :visible.sync="dialogVisible">
+      <img width="100%" :src="dialogImageUrl" alt="">
+    </el-dialog>
+  </div>
+</template>
+
+<script>
+import BusinessProcess from "@/components/businessProcess";
+import BasicInformation from "@/components/businessProcess/basicInformation";
+import { tokenStr, fileUrl, fileListData, streetList, communityList, userIfo, ages } from "@/api/file.js";
+import { findProcess } from "@/api/theElderly/apply.js";
+import { nutritionApply, nutritionReapply } from "@/api/nutrition/index.js";
+import { getDate } from "@/assets/js/utils.js";
+import { processCheck } from '@/api/theElderly/list.js';
+export default {
+  components: {
+    BusinessProcess,
+    BasicInformation
+  },
+  data() {
+    return {
+      type: null,
+      bType: null,
+      dialogImageUrl: '',
+      dialogVisible: false,
+      headers: {
+        Authorization: tokenStr()
+      },
+      actionUrl: process.env.VUE_APP_URL + fileUrl(),
+      applyList: [],
+      streetData: [],
+      communityData: [],
+      communityData1: [],
+      sqjd1: "",
+      sqjd2: "",
+      sqjd3: "",
+      sqjd4: "",
+      // 传给子组件表单
+      formSlot: {
+        homeStreetId: "",//户籍地街道Id	
+        homeStreetName: "",//户籍地街道	
+        homeCommunityId: "",//户籍地社区Id	
+        homeCommunityName: "",//户籍地社区	
+        homeAddress: "",//户籍详细地址	
+
+        streetId: "",//现居地街道Id	
+        streetName: "",//现居地街道	
+        communityId: "",//现居地社区Id	
+        communityName: "",//现居地社区	
+        address: "",//现居地详细地址
+      },
+      rulesSlot: {
+        homeStreetId: [{ required: true, message: '请选择户籍地街道', trigger: 'change' }],
+        homeCommunityId: [{ required: true, message: '请选择户籍地社区', trigger: 'change' }],
+        homeAddress: [{ required: true, message: '请输入户籍详细地址', trigger: 'change' }],
+        streetId: [{ required: true, message: '请选择现居地街道', trigger: 'change' }],
+        communityId: [{ required: true, message: '请选择现居地社区', trigger: 'change' }],
+        address: [{ required: true, message: '请输入现居地详细地址', trigger: 'change' }],
+      },
+      formFileRules: {
+        applicationFile: [{ required: true, message: '请上传申请表', trigger: 'change' }],
+        householdRegisterFile: [{ required: true, message: '请上传本人户口本资料', trigger: 'change' }],
+        idCardFile: [{ required: true, message: '请上传本人身份证', trigger: 'change' }],
+        cardFile: [{ required: true, message: '请上传存折/银行卡信息', trigger: 'change' }],
+        consignerFile: [{ required: true, message: '请上传委托书', trigger: 'change' }],
+        consignerIdCardFile: [{ required: true, message: '请上传委托人身份证', trigger: 'change' }],
+        aliveFile: [{ required: true, message: '请上传百岁建在证明', trigger: 'change' }],
+      },
+      fileJson: {
+        applicationFile: [],//申请表
+        householdRegisterFile: [],//本人户口本资料
+        idCardFile: [],//本人身份证
+        cardFile: [],//存折/银行卡信息
+        consignerFile: [],//委托书
+        consignerIdCardFile: [],//委托人身份证
+        aliveFile: [],//百岁建在证明
+      },
+      // 图片回显数据
+      imgListUrl: {},
+      // 需要提交的整体表单
+      submitObject: {},
+      // 提交表单时判断 子组件 和 父组件的所有验证是否通过
+      isSubmit: {
+        childrenForm: false,
+        formSlot: false,
+        formFile: false,
+      },
+      cardType: 2,
+    }
+  },
+  created() {
+    if (this.$route.query.idCard) {
+      this.type = 2;
+      this.bType = "2";
+    }
+    this.initStatus()
+  },
+  mounted() {
+    // 街道
+    streetList().then(res => {
+      if (res.data.code === 1) {
+        this.streetData = res.data.data.content;
+        res.data.data.content.forEach(item => {
+          if (item.id === userIfo().streetId) {
+            this.sqjd1 = item.name;
+            this.formSlot.homeStreetId = item.id;
+            this.formSlot.homeStreetName = item.name;
+          }
+        })
+      }
+    });
+    this.communityFun(userIfo().streetId);
+    this.communityFun1(null);
+  },
+  methods: {
+    initStatus() {
+      const that = this
+      let data = getDate()
+      findProcess({ businessType: 2, startTime: data }).then(res => {
+        if (res.data.code === 1) {
+          that.applyList.splice(0)
+          res.data.data.forEach(item => {
+            that.applyList.push({
+              title: item.name,
+              time: item.time,
+              status: 0,
+            })
+          })
+        }
+      });
+    },
+    cardTypeChange(val) {
+      this.cardType = val;
+    },
+    registerAddress(val) {
+      if (this.$route.query.idCard) {
+        for (let item in this.formSlot) {
+          this.formSlot[item] = val[item]
+        }
+        for (let item in this.fileJson) {
+          this.fileJson[item] = JSON.parse(val[item]) ? JSON.parse(val[item]) : [];
+          this.imgListUrl[item] = JSON.parse(val[item])
+        }
+        for (let item in this.imgListUrl) {
+          if (this.imgListUrl[item]) {
+            this.imgListUrl[item].forEach(key => {
+              key.url = process.env.VUE_APP_URL + '/' + key.fileDownloadUri;
+            })
+          } else {
+            this.imgListUrl[item] = []
+          }
+        }
+        streetList().then(res => {
+          if (res.data.code === 1) {
+            res.data.data.content.forEach(item => {
+              if (item.id === this.formSlot.homeStreetId) {
+                this.sqjd1 = item.name;
+              }
+              if (item.id === this.formSlot.streetId) {
+                this.sqjd3 = item.name;
+              }
+            })
+          }
+        });
+        communityList({ streetId: this.formSlot.streetId }).then(res => {
+          if (res.data.code === 1) {
+            res.data.data.content.forEach(item => {
+              if (item.id === this.formSlot.communityId) {
+                this.sqjd4 = item.name;
+              }
+            })
+          }
+        })
+        communityList({ streetId: this.formSlot.homeStreetId }).then(res => {
+          if (res.data.code === 1) {
+            res.data.data.content.forEach(item => {
+              if (item.id === this.formSlot.homeCommunityId) {
+                this.sqjd2 = item.name;
+              }
+            })
+          }
+        })
+      } else {
+        this.formSlot.homeAddress = val;
+      }
+    },
+    // 社区
+    communityFun(id) {
+      communityList({ streetId: id }).then(res => {
+        if (res.data.code === 1) {
+          this.communityData = res.data.data.content;
+          res.data.data.content.forEach(item => {
+            if (item.id === userIfo().communityId) {
+              this.sqjd2 = item.name;
+              this.formSlot.homeCommunityId = item.id;
+              this.formSlot.homeCommunityName = item.name;
+            }
+          })
+        }
+      })
+    },
+    communityFun1(id) {
+      communityList({ streetId: id }).then(res => {
+        if (res.data.code === 1) {
+          this.communityData1 = res.data.data.content;
+        }
+      })
+    },
+    homeStreetIdHandle(value) {
+      this.formSlot.homeStreetId = value.id;
+      this.formSlot.homeStreetName = value.name;
+      this.formSlot.homeCommunityId = "";
+      this.formSlot.homeCommunityName = "";
+      this.communityFun(value.id);
+    },
+    homeCommunityIdHandle(value) {
+      this.formSlot.homeCommunityId = value.id;
+      this.formSlot.homeCommunityName = value.name;
+    },
+    streetNameHandle(value) {
+      this.formSlot.streetId = value.id;
+      this.formSlot.streetName = value.name;
+      this.formSlot.communityId = "";
+      this.formSlot.communityName = "";
+      this.communityFun1(value.id);
+    },
+    communityIdHandle(value) {
+      this.formSlot.communityId = value.id;
+      this.formSlot.communityName = value.name;
+    },
+    // 上传成功
+    handleSuccess(response, file, fileList, item) {
+      if (this.$route.query.idCard) {
+        this.fileJson[item].push({ fileDownloadUri: response.fileDownloadUri });
+      } else {
+        this.fileJson[item] = fileListData(fileList);
+      }
+      this.$nextTick(() => {
+        this.$refs.formFile.clearValidate(item);
+      })
+    },
+    // 图片删除
+    handleRemove(file, fileList, item) {
+      if (this.$route.query.idCard) {
+        this.fileJson[item].forEach((obj, index) => {
+          if (obj.fileDownloadUri === file.fileDownloadUri) {
+            this.fileJson[item].splice(index, 1);
+          }
+        })
+      } else {
+        this.fileJson[item] = fileListData(fileList);
+      }
+    },
+    // 图片放大效果
+    handlePictureCardPreview(file) {
+      this.dialogImageUrl = file.url;
+      this.dialogVisible = true;
+    },
+    // 子组件中form值
+    formValue(val) {
+      // 子组件表单验证通过
+      this.isSubmit.childrenForm = true;
+      for (let key in val) {
+        this.submitObject[key] = val[key];
+      }
+    },
+    onSubmit(formFile) {
+      // 调用子元素方法获取参数
+      this.$refs.obtainSonData.fromDataFun('form');
+      // // 获取传给子组件中form的值
+      this.$refs["formSlot"].validate((valid) => {
+        if (valid) {
+          // 传给子组件的表单验证通过
+          this.isSubmit.formSlot = true;
+          for (let key in this.formSlot) {
+            this.submitObject[key] = this.formSlot[key];
+          }
+        } else {
+          return false;
+        }
+      });
+      //文件上传验证
+      this.$refs["formFile"].validate((valid) => {
+        if (valid) {
+          // 文件上传验证通过
+          this.isSubmit.formFile = true;
+          // 将要上传的文件列表变成字符串
+          for (let key in this.fileJson) {
+            this.submitObject[key] = JSON.stringify(this.fileJson[key]);
+          }
+        } else {
+          return false;
+        }
+      });
+
+      // 根据老人类型判断上传文件
+      if (this.isSubmit.childrenForm && this.isSubmit.formSlot && this.isSubmit.formFile) {
+        if (ages(this.submitObject.birthday) < 100) {
+          this.$message('由于您年龄未满100周岁，暂不能申请百岁营养补贴');
+        } else {
+          this.$confirm('温馨提示：请您仔细核实录入数据，申请过程中将无法修正！', '立即申请', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            if (this.$route.query.idCard) {
+              this.submitObject.orderNum = this.$route.query.orderNum;
+              nutritionReapply(this.submitObject).then(res => {
+                if (res.data.code === 1) {
+                  this.$alert('温馨提示：您好，您提交的申请已转交至下一环节，请您耐心等候。', '立即申请', {
+                    confirmButtonText: '确定',
+                    callback: () => {
+                      this.$message.success(res.data.msg);
+                      this.$router.push('/nutrition');
+                    }
+                  });
+                } else {
+                  this.$message.error(res.data.msg);
+                }
+              })
+            } else {
+              nutritionApply(this.submitObject).then(res => {
+                if (res.data.code === 1) {
+                  this.$alert('温馨提示：您好，您提交的申请已转交至下一环节，请您耐心等候。', '立即申请', {
+                    confirmButtonText: '确定',
+                    callback: () => {
+                      this.$message.success(res.data.msg);
+                      processCheck({
+                        orderNum: res.data.data,
+                        status: 1,
+                      }).then(response => { })
+                      this.$router.push('/nutrition');
+                    }
+                  });
+                } else {
+                  this.$message.error(res.data.msg);
+                }
+              })
+            }
+          }).catch(() => { });
+        }
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.business-apply-page {
+  padding: 0 50px;
+  .enclosure-file {
+    margin-top: 20px;
+    box-shadow: $back-shadow;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    .enclosure-components-title {
+      line-height: 50px;
+      color: $color1;
+    }
+    .from-btn {
+      padding: 30px 0;
+      text-align: center;
+    }
+  }
+}
+</style>

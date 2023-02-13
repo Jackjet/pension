@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烟感</title>
+    <link href="../plugin/layui/css/layui.css" rel="stylesheet" type="text/css" />
+    <link href="../public/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../libs/css/smokeSensation.css" rel="stylesheet" type="text/css" />
+    <script src='../plugin/layui/layui.js' type='text/javascript'></script>
+    <script src="../plugin/jQuery/jQuery.min.js" type='text/javascript'></script>
+    <script src='../public/js/root.js' type='text/javascript'></script>
+    <script src='../public/js/url.js' type='text/javascript'></script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="layui-row">
+                <form class="layui-form" action="">
+                    <div class="header">
+                        <div class="time-box">
+                            <span class="date"></span>
+                            <span class="time"></span>
+                        </div>
+                        <span>烟感</span>
+                    </div>
+                </form>
+                <div class="main-tab">
+                    <a href="#" id="returnHome"><span class="back"></span>返回首页</a>
+                    <a href="javascript:location.reload(true);"><span class="reload"></span>刷新</a>
+                </div>
+            </div>
+        </div>
+        <div class="tabLayui">
+            <!-- 左侧树导航 -->
+            <div class="left-tree">
+                <div id="tree-box" class="demo-tree"></div>
+            </div>
+            <!-- 右侧列表 -->
+            <div class="right-list">
+                <div class="query-condition layui-row">
+                    <form id="form-query" class="layui-form layui-form-pane" action="">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">姓名</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="name" autocomplete="off" class="layui-input"
+                                        placeholder="请输入老人姓名">
+                                </div>
+                            </div>
+                            <!-- <div class="layui-inline">
+                                <label class="layui-form-label">身份证</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="idCard" autocomplete="off" class="layui-input"
+                                        placeholder="请输入身份证号">
+                                </div>
+                            </div> -->
+                            <div class="layui-inline">
+                                <label class="layui-form-label">老人手机</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="phone" autocomplete="off" class="layui-input"
+                                        placeholder="请输入老人手机号">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">预警状态</label>
+                                <div class="layui-input-block">
+                                    <select name="alarmType" lay-filter="aihao">
+                                        <option value=""></option>
+                                        <option value="1">报警</option>
+                                        <option value="2">测试</option>
+                                        <option value="4">电池欠压</option>
+                                        <option value="5">污染</option>
+                                        <option value="18">设备摘除</option>
+                                        <option value="20">摘除恢复</option>
+                                        <option value="22">报警结束</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">设备状态</label>
+                                <div class="layui-input-block">
+                                    <select name="state" lay-filter="aihao">
+                                        <option value=""></option>
+                                        <option value="1">在线状态</option>
+                                        <option value="2">离线状态</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- <div class="layui-inline">
+                                <label class="layui-form-label">所属街道</label>
+                                <div class="layui-input-block">
+                                    <select name="homeStreetId" lay-filter="aihao" id="street_id">
+                                        <option value=""></option>
+                                        <option value="0">写作</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">所属社区</label>
+                                <div class="layui-input-block">
+                                    <select name="homeCommunityId" lay-filter="aihao" id="community_id">
+                                        <option value=""></option>
+                                        <option value="0">写作</option>
+                                    </select>
+                                </div>
+                            </div> -->
+                            <!-- <div class="layui-inline"> -->
+                            <button style="margin-right: 10px;" type="submit" class="layui-btn layui-btn-sm" lay-submit
+                                lay-filter="querySubmit">查询</button>
+                            <!-- <button id="reset" type="reset" style="display: none;"
+                                    class="layui-btn layui-btn-primary"></button> -->
+                            <!-- </div> -->
+                        </div>
+                    </form>
+                    <button style="margin-top: 5px;" class="layui-btn layui-btn-sm" id="downloadTem">下载模板</button>
+                    <button style="margin-top: 5px;" class="layui-btn layui-btn-sm" id="uploadFile">同步设备信息</button>
+                    <input type="file" name="filename" id="open" style="display: none;">
+                </div>
+                <div class="tips-news">
+                    <p><a id="routerPage" href="#" style="color:#fff;"><i class="layui-icon layui-icon-notice"></i>
+                            报警未处理（ <span id="call-the-police"></span> ）</a></p>
+                    <div class="statistics-num">
+                        <span> <i class="layui-icon layui-icon-chart"></i> 统计</span>
+                        <dl class="statistics-box">
+                            <dd>报警 <span id="alarm"></span></dd>
+                            <dd>测试 <span id="test"></span></dd>
+                            <dd>电池欠压 <span id="lowBattery"></span></dd>
+                            <dd>污染 <span id="pollute"></span></dd>
+                            <dd>设备摘除 <span id="unInstall"></span></dd>
+                            <dd>摘除恢复 <span id="reInstall"></span></dd>
+                            <dd>报警结束 <span id="alarmOff"></span></dd>
+                            <dd>设备离线 <span id="on-line"></span></dd>
+                            <dd>设备在线 <span id="off-line"></span></dd>
+                            <dd>设备总数 <span id="equipment-line"></span></dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="equipment-list">
+                    <ul class="list-content">
+                        <!-- <li class="equipment-item">
+                            <p><i class="layui-icon layui-icon-face-smile"></i> <span>设备在线</span></p>
+                            <p>王小贺 17732279296</p>
+                            <p>鼓楼街 壹街区</p>
+                            <p>设备ID: A0000969</p>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='../libs/js/smokeSensation.js' type='text/javascript'></script>
+    <iframe id="audioId" style="display: none;" allow="autoplay" src=""></iframe>
+</body>
+
+</html>

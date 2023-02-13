@@ -1,0 +1,83 @@
+$hundred: 100%;
+$number: 0;
+
+.container {
+  position: absolute !important;
+  top: $number;
+  bottom: $number;
+  width: $hundred;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  flex: 1;
+  flex-basis: auto;
+  overflow: auto;
+
+  .main {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    bottom: $number;
+    width: $hundred;
+
+    .class {
+      width: 65px !important;
+      height: $hundred;
+
+      .el-menu{
+        height: $hundred;
+        border: none !important;
+        text-align: left;
+      }
+    }
+
+    .el-menu-vertical-demo {
+      .Admin {
+        font-size: 22px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .content-box {
+    .collapse-btn {
+      border:1px silid red;
+      float: left;
+      margin-right: 30px;
+      cursor: pointer;
+      font-size: 22px;
+      color: #7d7f81;
+      margin-left: 3px;
+      line-height: 55px;
+    }
+  }
+
+  .item {
+    & > .is-fixed {
+      position: absolute !important;
+      top: 9px !important;
+    }
+  }
+
+  .el-icon-arrow-down {
+    font-size: 16px;
+  }
+
+  .el-scrollbar__bar {
+    &.is-vertical {
+      & > div {
+        width: $number !important;
+      }
+    }
+  }
+
+  .is-horizontal {
+    height: $number !important;
+  }
+
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
+    .el-scrollbar__view {
+      height: $hundred;
+    }
+  }
+}

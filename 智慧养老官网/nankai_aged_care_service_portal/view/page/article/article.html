@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/article/article.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/frameWork.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/publicModule.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/request.js"></script>
+    <script type='text/javascript' src='../../../libs/js/article/article.js'></script>
+    <title>智慧养老服务平台</title>
+</head>
+
+<body>
+    <div style='height: 100%; background-color:#fff;'>
+        <header></header>
+    </div>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="" style='margin: 0 0 10px 0'>
+                    <li class="layui-nav-item layui-this layui-selete ">
+                    </li>
+                    <li class="layui-nav-item layui-this">
+                        <a href="../../index.html">首页</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../oneStop/oneStop.html?level=U2Vjb25kbGV2ZWw=">一站式服务</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../article/article.html?level=U2Vjb25kbGV2ZWw=&move=zxjj">中心简介</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=xwtz">新闻通知</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=zcfg'>政策法规</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yscs'>养生常识</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yxal'>优秀案例</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../activity/activty.html?level=U2Vjb25kbGV2ZWw='>老人活动</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--<div class='layui-main2' >-->
+    <!--<div class='layui-row dataStat'>-->
+    <!--<div class='layui-col-xs8'>-->
+    <!--<h6 class="inline pd5">首页</h6><i class="layui-icon">></i><h6 class="inline pd5"><a id='title'>中心简介</a></h3></h6>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class='layui-main2 pd20  hboder' style='margin-bottom: 20px;'>
+        <div class='layui-row'>
+            <div class="layui-col-xs12">
+                <div class='city_new_left'>
+                    <!--<h2>-->
+                    <!--<p>-->
+                    <!--<i class='layui-icon'>&#xe68e;</i>您的位置：-->
+                    <!--</p>-->
+                    <!--<a class='Cityhome'>首页</a>-->
+                    <!--<i class='layui-icon'>&#xe602;</i>-->
+                    <!--<a id='title' class='type0'>未知</a>-->
+                    <!--<i class='layui-icon type0'>&#xe602;</i>-->
+                    <!--<a href="javascript:;">正文</a>-->
+                    <!--</h2>-->
+                    <ul class='main_list_left'>
+                        <div data-loader="circle" class='loading list-loading'></div>
+                        <div class="nodata npData">
+                            <i class="iconfont TanSantishi"></i>暂无数据 ！
+                        </div>
+                        <script id="main-cell" type="text/html">
+                            <div class='main_title'>{{title}}</div>
+                            <div class='main_time'>
+                                发布时间：{{createTime}} &nbsp;&nbsp;&nbsp;&nbsp; 来源：{{srcName}}
+                            </div>
+                            <hr>
+                            <div id='webHtml'></div>
+                        </script>
+                    </ul>
+                    <div id='laypage'></div>
+                </div>
+            </div>
+            <!--<div class="layui-col-xs3">-->
+            <!--<div class='city_new_right'>-->
+            <!--<h2>热门政策</h2>-->
+            <!--<ul class='hot'>-->
+            <!--<div data-loader="circle" class='loading hot-loading'></div>-->
+            <!--<script id="hot-cell" type="text/html">-->
+            <!--{{each content as value i}}-->
+            <!--<li>-->
+            <!--<a data-id="{{value.url}}" class='layui-elip Hot_list'>{{value.title}}</a>-->
+            <!--</li>-->
+            <!--{{/each}}-->
+            <!--{{if content.length === 0}}-->
+            <!--<div class="nodata">-->
+            <!--<i class="iconfont TanSantishi"></i>暂无数据 ！-->
+            <!--</div>-->
+            <!--{{/if}}-->
+            <!--</script>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

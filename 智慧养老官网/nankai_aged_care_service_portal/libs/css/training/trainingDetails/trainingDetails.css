@@ -1,0 +1,253 @@
+body {
+    background-color: #f6f7fb;
+}
+
+
+.current {
+    background: white;
+    margin: 20px 0px;
+    padding:0px 20px 20px 20px;
+}
+
+.current h2 {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.Details {
+    min-height: 200px;
+    position: relative;
+}
+
+.Details .title{
+    text-align: center;
+    font-size: 24px;
+    color: rgb(94, 94, 94);
+    margin-top: 50px;
+}
+
+.Details .time {
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(150, 150, 150);
+}
+
+.Details .main {
+    margin-top: 50px;
+    background: #f5f5f5;
+    padding:20px;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.main .image img {
+    width: 350px;
+    height: 250px;
+    vertical-align: top;
+}
+
+.main .image {
+    display: inline-block;
+}
+
+.main .right {
+    display: inline-block;
+    width: 720px;
+    vertical-align: top;
+    padding-left: 10px;
+}
+
+.main .right ul li {
+    /*height: 29px;*/
+    line-height: 29px;
+    color: #747474;
+}
+
+.main .right ul li i{
+    font-size:14px;
+    margin:0px 5px;
+}
+
+.main .right ul li span {
+    display: inline-block;
+    width:120px;
+    text-align: center;
+    margin-top: 10px;
+    height: 35px;
+    line-height: 35px;
+    background: #e4393c;
+    color: white;
+    cursor: pointer;
+}
+
+.Title{
+    line-height: 50px;
+    border-bottom: 2px solid #F5F5F5;
+}
+.Title span{
+    padding: 16px 0;
+    color: #000;
+    font-size: 20px;
+    border-bottom: 2px solid #000;
+}
+
+.Richtext {
+    margin: 20px 0px;
+    padding-bottom: 20px;
+}
+
+.Richtext div {
+    width: 100% !important;
+}
+
+.Richtext div div {
+    margin:0 !important;
+}
+
+.Richtext div div span {
+    width: 100% !important;
+}
+
+.Richtext img {
+    width: 100%;
+}
+
+.nav_layui-this{
+    background-color: #ba070f;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.nav_layui-this a span {
+   margin-right: 8px;
+}
+
+.attaChment {
+    border:1px solid #e0ecf9;
+}
+
+.attaChment h2 {
+    background: #e0ecf9;
+    height: 35px;
+    line-height: 35px;
+    padding:0px 20px;
+    color: #535353;
+    vertical-align: middle;
+}
+
+.attaChment h2 span {
+    display: inline-block;
+    height: 35px;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.attaChment h2 i {
+    margin-right: 5px;
+    color: #6089b6;
+    font-size:18px;
+}
+
+.attrContent {
+    height: 120px;
+}
+
+.attrContent .title {
+    color: #535353;
+    display: inline-block;
+    font-size: 14px;
+    margin: 20px 0px 0px 20px;
+}
+
+#container {
+    width: 550px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.amap-logo {
+    display: none !important;
+}
+
+.amap-copyright {
+    display: none !important;
+}
+
+.typeImage {
+    padding:0px 20px;
+    margin-top:15px;
+    position: relative;
+}
+
+.typeImage img{
+    display: inline-block;
+    width: 45px;
+    height:45px;
+    margin-right: 5px;
+}
+
+.typeImage span {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    color: #535353;
+}
+
+.typeImage p {
+    color: #1e5494;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.typeImage p a {
+    color: #1e5494 !important;
+}
+
+.typeImage p:nth-last-child(1) {
+    position: absolute;
+    left: 110px;
+    bottom: 2px;
+}
+
+.typeImage p:nth-last-child(2) {
+    position: absolute;
+    left: 75px;
+    bottom: 2px;
+}
+
+.UploadLeft {
+    position: absolute;
+    left: 75px !important;
+    bottom: 2px;
+}

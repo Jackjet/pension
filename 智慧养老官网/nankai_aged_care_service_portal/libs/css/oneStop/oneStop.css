@@ -1,0 +1,78 @@
+.service p{
+    height: 40px;
+    line-height: 20px;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #999;
+}
+
+.clamp{
+    height: 20px;
+    line-height: 20px;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: #999;
+}
+
+.service .clampp{
+    height: 20px;
+    line-height: 20px;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: #999;
+}
+.ml{
+    margin-right: 1.33%;
+    margin-top: 1.33%;
+}
+
+/* .cla li:hover{
+    background-color: #f47f3d;
+    color: #fff;
+    border-radius: 2px;
+} */
+.cla li{
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    color: #E85603;
+}
+
+.liang{
+    background-color: #fff;
+    color: #fff;
+    border-radius: 2px;
+    border: 1px solid #E85603;
+    
+}
+
+.text_cen .layui-btn {
+    width: 40%;
+}
+
+.w23 {
+    width: 23.6%;
+}
+
+.bold{
+    font-weight: bold;
+}
+.pdlr{
+    padding-left: 10px;
+    padding-right: 10px;
+}

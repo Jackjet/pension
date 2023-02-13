@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    overflow: hidden;
+    padding: 0;
+    font-family: Arial, 'Microsoft YaHei';
+    width: 100%;
+    height: 100%;
+    min-width: 1024px;
+    background: url("../image/banner.jpg") no-repeat;
+    background-size: 100% 100%;
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='../image/banner.jpg', sizingMethod='scale');
+}
+
+/* 头 */
+.container {
+    width: 100%;
+    height: 6vh;
+    display: block;
+}
+
+/* 操作列 */
+.header {
+    position: relative;
+    width: 100%;
+    height: 6vh;
+    line-height: 6vh;
+    background-size: 100% 100%;
+    text-align: center;
+    position: absolute;
+    box-sizing: border-box;
+    display: table;
+}
+
+.header span {
+    font-size: 3vh;
+    color: #7ee1e5;
+}
+
+.header .year-title {
+    margin-left: 10px;
+    font-size: 2vh;
+    color: #7ee1e5;
+}
+
+.main-tab {
+    position: absolute;
+    right: 2%;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 2vh;
+    color: #87D8F3;
+}
+
+.main-tab a {
+    color: #7ee1e5;
+}
+.time-box {
+    position: absolute;
+    left: 2%;
+    top: 7%;
+    font-size: 2vh;
+    color: #87D8F3;
+}
+
+.time-box .time {
+    /*font-weight: bold;*/
+    font-size: 2.3vh;
+}
+
+.time-box .date {
+    margin-left: 1.5vh;
+    font-size: 2.3vh !important;
+}
+
+.back {
+    display: inline-block;
+    margin-right: 0.7vw;
+    margin-bottom: -0.7vh;
+    background: url('../image/index.png');
+    background-size: 100% 100%;
+    height: 20px;
+    width: 20px;
+}
+.reload {
+    display: inline-block;
+    margin-left: 1vw;
+    margin-right: 0.7vw;
+    margin-bottom: -0.7vh;
+    background: url('../image/reload.png');
+    background-size: 100% 100%;
+    height: 20px;
+    width: 20px;
+}
+/*内容区*/
+.tabLayui {
+	width: 100%;
+    height: calc(100% - 11vh);
+    margin: 4vh auto 0;
+}
+.service-box {
+	height: 33.3%;
+}
+.service-box>div {
+	position: relative;
+	padding: 1vh;
+	height: 100%;
+}
+.service-box h3 {
+	font-size: 2vh;
+	padding-left: 2vh;
+	height: 4vh;
+	line-height: 5vh;
+	color: #fff;
+}
+.theOld-sum {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(../image/agedOrganizationRight.png) 0 0 no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.theOld-sum .ab-c {
+	width: 100%;
+    height: auto;
+}
+.theOld-sum-tit {
+	font-size: 1.6vh;
+	color: #fff;
+	text-align: center;
+}
+.theOld-sum-num {
+	font-size: 3vh;
+	color: #6DF0FF;
+	text-align: center;
+}
+.theOld-type {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(../image/regionsMin.png) 0 0 no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.subsidy-grant,
+.theOld-atHome,
+.theOld-subsidy {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(../image/regionsBottom.png) 0 0 no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.Order-abnormal,
+.service-satisfied,
+.Order-data {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(../image/regionsMin.png) 0 0 no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.chart-box {
+	width: 100%;
+	height: calc(100% - 4vh);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}

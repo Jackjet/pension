@@ -1,0 +1,16 @@
+/** 项目整体通用 CSS 样式 **/
+@import "../../../plugin/layui/css/layui.css";
+@import "../../font/iconfont.css";
+@import "./libs/style.css";
+@import "./libs/loaders.min.css";
+@import "./libs/animate.min.css";
+
+@import "./libs/header.css";
+@import "./libs/nav.css";
+@import "./libs/footer.css";
+
+.text_html{
+    line-height: 30px;
+    margin: 10px 0;
+    text-indent: 2em;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <title>老人信息大数据分析平台</title>
+  <link href="../plugin/layui/css/layui.css" rel="stylesheet" type="text/css" />
+  <link href="../public/css/base.css" rel="stylesheet" type="text/css" />
+  <link href="../libs/css/serviceData.css" rel="stylesheet" type="text/css" />
+  <script src='../plugin/layui/layui.js' type='text/javascript'></script>
+  <script src="../plugin/echarts/echarts.min.js" type='text/javascript'></script>
+  <script src="../plugin/jQuery/jQuery.min.js"></script>
+  <script src='../public/js/root.js' type='text/javascript'></script>
+  <script src='../public/js/url.js' type='text/javascript'></script>
+</head>
+
+<body>
+  <div class="box">
+    <div class="container">
+      <div class="layui-row">
+        <form class="layui-form" action="">
+          <div class="header">
+            <div class="time-box">
+              <span class="date"></span>
+              <span class="time"></span>
+            </div>
+            <span>养老业务数据展示</span>
+          </div>
+        </form>
+        <div class="main-tab">
+          <a href="./index.html"><span class="back"></span>返回首页</a>
+          <a href="javascript:location.reload(true);"><span class="reload"></span>刷新</a>
+        </div>
+      </div>
+    </div>
+    <div class="tabLayui">
+      <div class="service-box service-top layui-row">
+        <div class="layui-col-md3">
+          <div class="theOld-sum">
+            <div class="ab-c">
+              <p class="theOld-sum-tit">本年老人总数</p>
+              <p class="theOld-sum-num">共计：<span></span>人</p>
+            </div>
+          </div>
+        </div>
+        <div class="layui-col-md3">
+          <div class="theOld-type">
+            <h3>本年老人分类数据占比</h3>
+            <div class="chart-box" id="theOld-type"></div>
+          </div>
+        </div>
+        <div class="layui-col-md6">
+          <div class="theOld-subsidy">
+            <h3>本年享受居家补贴数据展示</h3>
+            <div class="chart-box" id="theOld-subsidy"></div>
+          </div>
+        </div>
+      </div>
+      <div class="service-box service-center layui-row">
+        <div class="layui-col-md6">
+          <div class="subsidy-grant">
+            <h3>本年当前月各街道养老补贴发放情况</h3>
+            <div class="chart-box" id="subsidy-grant"></div>
+          </div>
+        </div>
+        <div class="layui-col-md6">
+          <div class="theOld-atHome">
+            <h3>近5年居家老人人口数据分析</h3>
+            <div class="chart-box" id="theOld-atHome"></div>
+          </div>
+        </div>
+      </div>
+      <div class="service-box service-bottom layui-row">
+        <div class="layui-col-md4">
+          <div class="Order-abnormal">
+            <h3>本年当前月异常订单统计</h3>
+            <div class="chart-box" id="Order-abnormal"></div>
+          </div>
+        </div>
+        <div class="layui-col-md4">
+          <div class="service-satisfied">
+            <h3>本年度服务满意度统计</h3>
+            <div class="chart-box" id="service-satisfied"></div>
+          </div>
+        </div>
+        <div class="layui-col-md4">
+          <div class="Order-data">
+            <h3>本年服务工单数据统计</h3>
+            <div class="chart-box" id="Order-data"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='../libs/js/serviceData.js' type='text/javascript'></script>
+</body>
+
+</html>

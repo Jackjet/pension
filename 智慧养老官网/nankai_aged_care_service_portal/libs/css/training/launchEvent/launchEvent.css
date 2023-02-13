@@ -1,0 +1,177 @@
+body {
+    background-color: #f6f7fb;
+}
+
+
+.current {
+    background: white;
+    margin: 20px 0px;
+    padding:0 20px;
+}
+
+.current h2 {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.Details {
+    min-height: 200px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0px;
+    width: 50%;
+    margin:auto;
+}
+
+
+.Details .layui-form-label b {
+    color: red;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.Details input {
+    width: 70%;
+}
+
+.start-two {
+    border-color: #e6e6e6;
+    float: left;
+    height: 38px;
+    width: 40% !important;
+    line-height: 1.3;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    border-radius: 2px;
+    padding-left: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+.nav_layui-this{
+    background-color: #ba070f;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.nav_layui-this a span {
+    margin-right: 8px;
+ }
+ 
+.layui-textarea {
+    width: 90%;
+}
+
+.layui-upload-drag {
+    float: left;
+}
+
+.buttonUp button {
+    float: left;
+}
+
+.buttonUp span {
+    height: 100%;
+    float: left;
+    line-height: 40px;
+    margin-left: 20px;
+    color: #8f8f8f;
+}
+
+.Submitbutton button {
+    float: left;
+    padding: 0px 30px;
+    background: #e4393c;
+}
+
+.layui-form-select {
+    width: 55%;
+}
+
+.layui-form-select input {
+    width: 100%;
+}
+
+.layui-laydate-content > .layui-laydate-list {
+    padding-bottom: 0px;
+    overflow: hidden;
+}
+
+.layui-laydate-content > .layui-laydate-list > li{
+    width:50%
+}
+
+.merge-box .scrollbox .merge-list {
+    padding-bottom: 5px;
+}
+
+.laydate-time-list li:nth-child(1) {
+    /* width: 50%; */
+}
+
+.laydate-time-list li:nth-child(3) {
+    display:none !important;
+}
+.laydate-btns-now{
+    display:none !important;
+}
+
+.layui-upload-drag .layui-icon {
+    color: #e4393c;
+}
+
+.layui-btn {
+    background: #e4393c;
+}
+
+.layui-upload-list {
+    width: 100%;
+    margin:0px !important;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.layui-upload-list img {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    border:0px !important;
+}
+
+img[src=""],img:not([src]){
+    opacity:0;
+}
+
+.layui-form-select dl dd.layui-this {
+    background: #f56f71;
+}

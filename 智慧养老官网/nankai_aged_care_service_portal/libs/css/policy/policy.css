@@ -1,0 +1,143 @@
+body {
+    background-color: #f6f7fb;
+}
+
+.banner img {
+    width: 100%;
+    min-width: 1200px;
+}
+
+.banner {
+    margin-bottom: 20px;
+}
+
+.row-box {
+    width: 98%;
+    margin: 20px 0px;
+    height: 460px;
+    background: white;
+    border:1px solid #de141d;
+}
+
+.row-box_right{
+    width: 98%;
+    margin: 20px 0px;
+    height: 460px;
+    background: white;
+    float: right;
+    border:1px solid #de141d;
+}
+
+.row-box h2 {
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #de141d;
+}
+
+.row-box h2 div {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.row-box h2 div i {
+    font-size: 24px;
+    position: absolute;
+}
+
+.row-box h2 div span {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.row-box h2 a {
+    color: white;
+    font-size: 12px;
+    float:right;
+}
+
+.row-box h2 a:hover {
+    cursor: pointer;
+}
+
+.row-box h2 a i {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+
+.row-box_right h2 {
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #de141d;
+}
+
+.row-box_right h2 div {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.row-box_right h2 div i {
+    font-size: 24px;
+    position: absolute;
+}
+
+.row-box_right h2 div span {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.row-box_right h2 a {
+    color: white;
+    font-size: 12px;
+    float:right;
+}
+
+.row-box_right a:hover {
+    cursor: pointer;
+}
+
+.row-box_right h2 a i {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.policy_box li {
+    margin:0px 20px;
+    border-bottom: 1px dashed #e6e6e6;
+    height: 50px;
+    line-height: 50px;
+}
+
+.policy_box li:nth-last-child(1){
+    border:none;
+}
+
+.policy_box li a {
+    display: inline-block;
+    width: 100%;
+}
+
+.policy_box li a span {
+    width: 70%;
+    display: inline-block;
+}
+
+.policy_box li a p {
+    float: right;
+}

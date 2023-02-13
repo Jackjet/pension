@@ -1,0 +1,312 @@
+.layui-main2 {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    min-width: 1200px;
+    overflow: hidden;
+}
+
+.title {
+    border-left: 5px solid #f47f3d;
+    padding-left: 15px;
+    font-weight: 600;
+}
+
+body {
+    margin:0px;
+    padding: 0px;
+}
+
+.iframe_title {
+    height: 40px;
+    background: #fbfbfb;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    line-height: 40px;
+    color: #666;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.iframe_title h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+    vertical-align: top;
+}
+
+.iframe_title h2 p i {
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 39px;
+}
+
+.iframe_title h2 p a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.iframe_title h2 a {
+    display: inline-block;
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+    vertical-align: top;
+}
+
+.iframe_title h2 > i {
+    color: rgb(94, 94, 94);
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.templet {
+    padding:0px 20px;
+    text-align: center;
+    color: #666;
+    margin-top: 20px;
+}
+
+.templet ul .layui-this {
+    background: white !important;
+    color: #de141d !important;
+}
+
+.templet ul .layui-this::after {
+    border-bottom:2px solid #de141d !important;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.layui-tab-content {
+    position: relative;
+    min-height:300px;
+    padding:0px !important;
+}
+
+.table_header {
+    height:40px;
+    margin-top: 20px;
+    background: #FFF8E9;
+    line-height: 40px;
+    font-size: 14px;
+    color:#000;
+    border: 1px solid #EFE3BE;
+}
+
+.left{
+    padding-left: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+    padding-right: 28px;
+}
+
+.layui-tab-content ul li {
+    border:1px solid #EFE3BE;
+    margin-top: 20px;
+    height: 201px;
+}
+
+.layui-tab-content ul li h2 {
+    height: 30px;
+    background: #FFF8E9;
+    font-size:12px;
+    line-height: 30px;
+    padding-left:20px;
+}
+
+.layui-tab-content ul li img {
+    width: 80px;
+    height:70px;
+    border:1px solid #f1f1f1;
+    display: inline-block;
+    margin:10px 0px 0px 20px;
+}
+
+.layui-tab-content ul li a {
+    display: inline-block;
+    width: 100;
+    height:90px;
+    padding-right:20px;
+}
+
+.layui-tab-content ul li a span {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 88px;
+    margin-left: 20px;
+}
+
+.amount {
+    float: right;
+    height: 90px;
+    min-width: 100px;
+    padding-right: 20px;
+    text-align: center;
+    border-right:1px solid #f1f1f1;
+}
+
+.amount div {
+    height:45px;
+    line-height:65px;
+}
+
+.amount span {
+    color: #de141d;
+}
+
+.amount p {
+    display: block;
+    line-height: 30px;
+}
+
+.operation {
+    width: 110px;
+    height:100px;
+    float: right;
+}
+
+.operation span {
+    height: 45px;
+    display: inline-block;
+    line-height: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+.operation a {
+    cursor: pointer;
+    display: inline-block;
+    height: 45px !important;
+    width: 100%;
+    text-align:center;
+    line-height: 30px;
+    padding:0px !important;
+    color: #666;
+}
+
+
+.orde p,
+.orde span{
+    text-align: center;
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+.borBtom {
+    border-bottom: 1px solid #EFE3BE;
+}
+
+.borLeft {
+    border-right: 1px solid #EFE3BE;
+}
+
+.layui-form-checkbox {
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    background-color: #FFF8E9;
+
+}
+
+.layui-form-checkbox i {
+    border-left: 1px solid #d2d2d2;
+    height: 20px;
+    width: 20px;
+    /*color: #FFF8E9;*/
+}
+
+.layui-form-item .layui-form-checkbox {
+    margin-top: -3px;
+}
+
+.serviceName {
+    float: left;
+    width: 65%;
+}
+
+.service .layui-form-checkbox {
+    background-color: #FFF;
+}
+
+.service .layui-form-checkbox i {
+    /*color: #fff;*/
+}
+
+.lineh80 {
+    line-height: 80px;
+}
+
+.expectTime {
+    height: 80px;
+}
+
+.bottom {
+    height: 50px;
+    line-height: 50px;
+    background-color: #FFF8E9;
+    margin-top: 20px;
+}
+
+.flt {
+    float: left;
+}
+
+.flr {
+    float: right;
+}
+
+.reserve {
+    margin: 7px 12px 0 0;
+}
+
+.total {
+    margin-right: 80px;
+}
+
+.message {
+    height: 71px;
+    line-height: 35px;
+    border-top: 1px solid #EFE3BE;
+    float: left;
+    width: 89.6%;
+    margin-top: 0;
+    padding: 0 0 0 125px;
+    background-color: #F7F7F7;
+}
+
+.message .fll {
+    float: left;
+    margin-right: 25px;
+    color: #333333;
+    font-size: 12px;
+}
+
+.message p {
+    float: left;
+    margin-right: 25px;
+    color: #333333;
+    font-size: 12px;
+}
+
+
+

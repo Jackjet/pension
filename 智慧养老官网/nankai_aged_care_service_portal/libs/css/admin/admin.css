@@ -1,0 +1,192 @@
+body {
+    background-color: #f6f7fb;
+}
+
+#admin .layui-nav{
+    background-color: white;
+    color: #000!important;
+}
+#admin .layui-nav-itemed>a, .layui-nav-tree .layui-nav-title a, .layui-nav-tree .layui-nav-title a:hover{
+    color: #f47f3d!important;
+}
+#admin .layui-nav-tree .layui-nav-item a:hover{
+    background-color: #f6f7fb;
+}
+#admin .layui-nav .layui-nav-item a {
+    color: #000;
+}
+#admin .layui-nav-tree{
+    width: 100%;
+}
+
+#admin .layui-nav-itemed>.layui-nav-child{
+    background-color: #fff!important;
+}
+
+#admin .layui-nav .layui-nav-item:hover {
+    background-color: #f2f2f3;
+}
+
+#admin .layui-nav .layui-nav-child dd.layui-this a{
+    background-color: #f2f2f3;
+}
+
+#admin .layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this{
+    background-color: #f2f2f3!important;
+    color:#000;
+}
+#admin .layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this{
+    background-color: #f2f2f3!important;
+    color:#000;
+}
+ #admin .layui-nav .layui-nav-mored, .layui-nav-itemed>a .layui-nav-more {
+    border-color: transparent transparent #828386
+} 
+ #admin  .layui-nav .layui-nav-mored, .layui-nav-itemed>a .layui-nav-more {
+    border-top-color: transparent !important
+} 
+#admin .layui-nav .layui-nav-more{
+    border-top-color: #828386;
+} 
+#admin .layui-nav .layui-nav-item dd a {
+  padding-left: 40px; 
+}
+
+#admin .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover {
+    background-color: #fff; 
+}
+.nav_admin {
+    background: white;
+    width: 100%;
+    margin: 10px 0 20px 0px;
+    border:1px solid #eeeeee;
+}
+
+.nav_main {
+    background: white;
+    width: 94%;
+    margin: 10px 0 20px 0px;
+    float: right;
+    border:1px solid #eeeeee;
+    min-height:460px;
+}   
+
+.nav_admin .adminlogo {
+    vertical-align: top;
+    width: 100%;
+    height: 190px;
+    text-align: center;
+    line-height: 150px;
+    position: relative;
+}
+
+.nav_admin .adminlogo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.nav_admin .adminlogo p {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.tree {
+    margin:0px 20px;
+}
+
+.tree ul {
+    border-top: 1px solid rgb(226, 226, 226);
+    margin-top: 5px;
+}
+
+.tree ul .tree-title {
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.tree ul .tree-title img {
+    width: 23px;
+    height:23px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.tree ul .tree-title  span {
+    display: inline-block;
+    height: 40px;
+    line-height: 42px;
+    vertical-align: middle;
+}
+
+.tree ul li {
+    padding-left: 50px;
+    text-align: left;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.tree ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+iframe {
+    border:0px !important;
+    width: 100% !important;
+    min-height: 620px;
+    /* height: 100%; */
+}
+
+/* .Color a {
+    color: #de141d !important;
+} */
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.layui-nav-tree .layui-nav-bar {
+    background-color: #f47f3d!important;
+}
+
+.pd10 {
+    padding: 15px 20px;
+}
+
+.item a {
+    padding-left: 33px !important;
+}
+
+.item a:hover {
+    color: #f47f3d !important;
+}
+
+.icon {
+    width: 15px;
+    vertical-align: baseline;
+}
+
+.right {
+    display: block;
+    float: right;
+}
+
+.num {
+    margin-right: 5px;
+    color: #f47f3d;
+    font-weight: 600;
+}

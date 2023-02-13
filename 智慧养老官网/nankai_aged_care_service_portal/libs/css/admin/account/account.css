@@ -1,0 +1,84 @@
+.enterprise {
+    margin: 20px;
+    width: 76%;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.enterprise h2 {
+    color: #f47f3d;
+    font-weight: 600;
+    display: inline-block;
+    height: 33px;
+    border-bottom: 3px solid #f47f3d;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.content p {
+    margin-top: 15px;
+}
+
+.upload {
+    display: block;
+    margin: 15px auto;
+    color: #f47f3d;
+    border: 1px solid #f47f3d;
+    border-radius: 3px;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.info {
+    width: 50%;
+    margin: 50px 0 0 28%;
+}
+
+.info p {
+    margin-bottom: 25px;
+}
+
+.passWord {
+    width: 76%;
+    border-bottom: 1px solid #ddd;
+    padding-left: 5px;
+    margin-left: 20px;
+    /*margin-right: 20px;*/
+    padding-bottom: 15px;
+}
+
+.passWord p {
+    float: left;
+    line-height: 27px;
+    color: #666;
+}
+
+.passWord .upload {
+    text-align: center;
+    float: right;
+    margin: 0;
+    margin-right: 10px;
+}
+
+#Form {
+    padding-top: 15px;
+}
+
+.layui-form-item {
+    width: 426px;
+}
+
+.layui-form-item b {
+    color: red;
+}
+

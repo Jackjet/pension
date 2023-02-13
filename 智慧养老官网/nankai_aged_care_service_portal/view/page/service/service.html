@@ -1,0 +1,124 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-12 19:28:14
+ * @LastEditTime: 2020-05-13 18:44:30
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \nankai_aged_care_service_portal\view\page\service\service.html
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/service/service.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../plugin/wow/wow.min.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/publicModule.js"></script>
+    <script type='text/javascript' src='../../../libs/js/service/service.js'></script>
+    <title>智慧养老服务平台</title>
+</head>
+<body>
+<div style='height: 100%; background-color:#fff;'>
+    <header></header>
+</div>
+<nav>
+    <div class='layui-row'>
+        <div class='layui-main'>
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item layui-selete"></li>
+                <li class="layui-nav-item layui-this">
+                    <a href="../../index.html">首页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="../oneStop/oneStop.html?level=U2Vjb25kbGV2ZWw=" >一站式服务</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="../article/article.html?level=U2Vjb25kbGV2ZWw=&move=zxjj" >中心简介</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="subColumn.html?level=U2Vjb25kbGV2ZWw=&id=xwtz" >新闻通知</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href='subColumn.html?level=U2Vjb25kbGV2ZWw=&id=zcfg'>政策法规</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href='subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yscs'>养生常识</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href='subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yxal' >优秀案例</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href='../activity/activty.html?level=U2Vjb25kbGV2ZWw=' >老人活动</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class='layui-main2 pd20  hboder' style='margin-bottom: 20px; margin-top: 50px;'>
+        <div class='layui-row'>
+            <div class="service-header layui-col-xs12 pd10">
+                <div class="layui-col-xs4 h100">
+                    <img class="pjImg" src="">
+                </div>
+                <div class="layui-col-xs8 pl20 h100">
+                    <h2 class="name"></h2>
+                    <p class="layui-col-xs12 hr"></p>
+                    <p class="mlt15 layui-col-xs12 lh30"><span class="wd5">地址:</span> <span class="address over-hid wd95"></span></p>
+                    <p class="layui-col-xs12 lh30"><span class="wd5">电话:</span> <span class="phone over-hid wd95"></span></p>
+                    <p class="layui-col-xs12 lh30"><span class="layui-col-xs1">营业时间:</span> <span class="time layui-col-xs11 over-hid"></span></p>
+                    <p class="layui-col-xs12  content p50"></p>
+                </div>
+               
+            </div>
+            <div class="layui-col-xs12 mlt20">
+                <div class='city_new_left'>
+                    <!--<h2><span id='species'></span></h2>-->
+                    <ul class='pj_list'>
+                        <script id="list-cell" type="text/html">
+                        {{each content as value i}}
+                            <li class="pd10">
+                            <div class="h70 wd5 " style="border-radius:50%; width:50px; height:50px;">
+                                <img style="border-radius:50%;" src="{{value.icon}}" alt="" width="50px;" height="50px;">
+                            </div>
+                            <div class="h100 wd95 pl20">
+                                <p class="layui-col-xs12 over-hid fs12">{{value.manName}}</p>
+                                <p class="layui-col-xs12 over-hid fs12">{{value.appraiseTime}}</span></p>                  
+                                {{if value.appraiseCode == '满意'}}
+                                    <p class="layui-col-xs12 over-hid mlt10 appraise">{{value.appraiseCode}}</p>
+                                {{ else if value.appraiseCode == '一般' }}  
+                                    <p class="layui-col-xs12 over-hid mlt10 appraisey">{{value.appraiseCode}}</p>
+                                {{else }}  
+                                    <p class="layui-col-xs12 over-hid mlt10 appraisen">{{value.appraiseCode}}</p>
+                                {{/if}}    
+                                <p class="layui-col-xs12 over-hid mlt5 fs12">{{value.appraiseMessage}}</span></p>
+                            </div>
+                         </li>
+                        {{/each}}
+                        {{if content.length === 0}}
+                            <div class="nodata">
+                                <i class="iconfont TanSantishi"></i>暂无数据 ！
+                            </div>
+                        {{/if}}
+                        </script>
+                     
+                    </ul>
+                    <div id='laypage'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

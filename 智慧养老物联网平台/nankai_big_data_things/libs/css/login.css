@@ -1,0 +1,120 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    padding: 0;
+    font-family: Arial, 'Microsoft YaHei';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("../image/indexBg.jpg") no-repeat;
+    background-size: 100% 100%;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../image/banner.jpg', sizingMethod='scale');
+    vertical-align: bottom;
+    display: block
+}
+
+/* 头 */
+.header {
+    width: 100%;
+    height: 6vh;
+    background-size: 100% 100%;
+    text-align: center;
+    position: absolute;
+    box-sizing: border-box;
+    display: table;
+    line-height: 6vh;
+}
+
+.header .title {
+    font-size: 3vh;
+    color: #7ee1e5;
+}
+
+.time-box {
+    position: absolute;
+    left: 2%;
+    top: 7%;
+    font-size: 2vh;
+    color: #87D8F3;
+}
+
+.time-box .time {
+    font-weight: bold;
+}
+
+.time-box .date {
+    margin-left: 1.5vh;
+    font-size: 2.3vh;
+}
+
+/* 登录 */
+.content {
+    margin: 0 auto;
+    margin-top: 12%;
+    width: 60vw;
+    height: 50vh;
+    max-width: 500px;
+    background: url("../image/loginBag.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 15vh;
+}
+
+.title {
+    margin: 0 10px;
+    font-size: 2.5vh;
+    color: #3CB8D6;
+}
+
+.login {
+    padding: 0 15vh;
+}
+
+.layui-form-item .layui-input-inline {
+    width: 100%;
+}
+
+.layui-input {
+    background-color: #1D2563;
+    border: 1px solid #003CFF;
+    /* color: #003CFF; */
+    color: #fff;
+}
+
+.layui-input::-webkit-input-placeholder {
+    color: #003CFF;
+}
+
+.layui-form-checkbox[lay-skin=primary] {
+    color: #fff;
+}
+
+.layui-form-checkbox[lay-skin=primary] i {
+    border: 1px solid #003CFF;
+    /* background-color: #1D2563; */
+    /* color: #1D2563; */
+}
+
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #003CFF !important;
+    background-color: #1D2563;
+    color: #fff;
+}
+
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #003CFF;
+    color: #fff;
+}
+
+.layui-btn {
+    width: 100%;
+    background-color: #003CFF;
+}

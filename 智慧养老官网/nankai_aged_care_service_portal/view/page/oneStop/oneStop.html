@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='../../../public/common/css/frameWork.css' rel='stylesheet' type='text/css' />
+    <link href="../../../libs/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/oneStop/oneStop.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../plugin/wow/wow.min.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../public/common/js/libs/publicModule.js"></script>
+    <script type="text/javascript" src="../../../libs/js/oneStop/oneStop.js"></script>
+    <title>智慧养老服务平台</title>
+</head>
+
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item layui-selete"></li>
+                    <li class="layui-nav-item layui-this">
+                        <a href="../../index.html">首页</a>
+                    </li>
+                    <li class="layui-nav-item  layui-selete">
+                        <a href="../oneStop/oneStop.html?level=U2Vjb25kbGV2ZWw=">一站式服务</a>
+                    </li>
+
+                    <li class="layui-nav-item">
+                        <a href="../article/article.html?level=U2Vjb25kbGV2ZWw=&move=zxjj">中心简介</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=xwtz">新闻通知</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=zcfg'>政策法规</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yscs'>养生常识</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yxal'>优秀案例</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../activity/activty.html?level=U2Vjb25kbGV2ZWw='>老人活动</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <div class='layui-main1 pd10'>
+        <div class='layui-row layui-col-xs5'>
+            <h2><p>首页</p><i class="layui-icon"></i><a>一站式服务</a></h2>
+        </div>
+    </div> -->
+    <div class='layui-main1'>
+        <div class='layui-row dataStat'>
+            <div class='layui-col-xs8'>
+                <!-- <h3 class="inline pd5">首页</h3><i class="layui-icon">></i><h6 class="inline pd5"><a>一站式服务</a></h6> -->
+            </div>
+        </div>
+    </div>
+    <div class='layui-main1'>
+        <div class='layui-row dataStatB hboder'>
+            <div class='layui-col-xs12 pdt20 cla'>
+                <span data-id="{{value.id}}" class="fl pdlr">服务分类:</span>
+                <li data-id="" class="liang cla_child fl pdlr cursor" style="color:#1f1d1d">不限</li>
+                <script id="class-cell" type="text/html">
+                    {{each content as value i}}
+                    {{if i == 0 }}
+                        <li data-id="{{value.id}}" class="cla_child fl pdlr cursor">{{value.name}}</li>
+                    {{else}}
+                        <li data-id="{{value.id}}" class="cla_child fl pdlr cursor">{{value.name}}</li>
+                    {{/if}}        
+                    
+                    {{/each}}  
+                </script>
+            </div>
+        </div>
+        <div class='layui-row dataStatB hboder mlt15'>
+            <div class='layui-col-xs9 pdt10'>
+                <h3 class="fl pd10 bold">服务列表</h3>
+            </div>
+            <div class='layui-col-xs3 w23 pd10'>
+                <div class="layui-col-xs12">
+                    <div class="layui-form-item">
+                        <div class="layui-input-block layui_input_Search">
+                            <input type="text" id="search_name" lay-verify="required" placeholder="请输入服务项"
+                                autocomplete="off" class="layui-input">
+                            <a href="javascript:;" class="layui-btn" id="search_ser">搜 索</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='layui-main1 pd10 ser min-height'>
+        <div data-loader="circle" class='loading hot-loading'></div>
+        <script id="user-cell" type="text/html">
+          {{each content as value i}}
+            <div class='service layui-col-xs3 w23 pd20 animated fadeInUp ml hboder'>
+              <h3 class="clamp" style="color:#000">{{value.name}}</h3>
+                <p class="mlt15 tipsId" style="cursor: pointer;">{{value.remark}}</p>
+                <div class="clearfix mlt10" >
+                    <p class=" clampp" style="height: 20px; line-height: 20px;" >
+                      <span>服务金额:</span>
+					  <span class="cor">{{value.minMoneyy === value.maxMoneyy  ? value.minMoneyy : value.minMoneyy + ' 至 ' + value.maxMoneyy}}</span>
+                    </p>    
+                    <p  class=" clampp" style="height: 20px; line-height: 20px;">
+                        {{if value.type === '0'}}
+                        <span>服务时长:</span><span class="cor">{{value.time}}小时</span>
+                        {{else if value.type === '1' }} 
+                        <span>服务次数:</span><span class="cor">{{value.time}}</span>
+                        {{else if value.type === '2' }}
+                        <span>计价单位:</span><span class="cor">{{value.unit}}</span>
+                        {{/if}}  
+                    </p>  
+                </div>
+                <div class="text_cen pdt20">
+                    <a class="layui-btn reserve" data-type='{{value.type}}' data-id='{{value.id}}' data-name='{{value.name}}' data-time='{{value.time}}' data-unit='{{value.unit}}' data-money='0' data-money1='{{(value.minMoney/100).toFixed(2)}}-{{(value.maxMoney/100).toFixed(2)}}' >预 定</a>
+               </div>    
+              </div>
+          {{/each}}
+          {{if content.length === 0}}
+              <div class="nodata">
+                  <i class="iconfont TanSantishi"></i>暂无数据 ！
+              </div>
+          {{/if}}
+      </script>
+    </div>
+    <div class="pagepadding" style="background-color: #fff;">
+        <script id="text_cen" type="text/html">
+            {{if content.length !== 0}}
+            <div class="text_cen" id="laypage"></div>
+            {{/if}}
+        </script>
+    </div>
+
+    <!-- <div class="text_cen" id="laypage"></div> -->
+    <footer></footer>
+</body>
+
+</html>

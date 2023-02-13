@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='../../../../public/common/css/frameWork.css' rel='stylesheet' type='text/css' />
+    <link href="../../../../libs/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/admin/orderDetail/orderDetail.css" rel="stylesheet" type="text/css" />
+
+
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../plugin/qrcode/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+    <script type="text/javascript" src="../../../../libs/js/orderDetail/orderDetail.js"></script>
+    <title>智慧养老服务平台</title>
+</head>
+
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item layui-this layui-selete ">
+                    </li>
+                    <li class="layui-nav-item layui-this">
+                        <a href="../../../index.html">首页</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../oneStop/oneStop.html?level=U2Vjb25kbGV2ZWw=">一站式服务</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../article/article.html?level=U2Vjb25kbGV2ZWw=&move=zxjj">中心简介</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=xwtz">新闻通知</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=zcfg'>政策法规</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yscs'>养生常识</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../../subColumn/subColumn.html?level=U2Vjb25kbGV2ZWw=&id=yxal'>优秀案例</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href='../../activity/activty.html?level=U2Vjb25kbGV2ZWw='>老人活动</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <div class='layui-main1 pd10'>
+        <div class='layui-row layui-col-xs5'>
+            <h2><p>首页</p><i class="layui-icon"></i><a>一站式服务</a></h2>
+        </div>
+    </div> -->
+    <!--<div class='layui-main2' >-->
+    <!--<div class='layui-row dataStat'>-->
+    <!--<div class='layui-col-xs8'>-->
+    <!--<h3 class="inline pd5">首页</h3><i class="layui-icon">></i><h6 class="inline pd5"><a>我的</a></h3><i class="layui-icon">></i><h6 class="inline pd5"><a>订单详情</a></h6>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class='layui-main2 pd20  hboder' style='margin-top: 10px'>
+        <div class='layui-row h1000'>
+            <div class="layui-row hp35">
+                <span class="pdl10">订单详情</span>
+            </div>
+            <div class="layui-row mlt20 text_cen h600">
+                <div class='left pdt10  boder'>
+                    <p class="text_cen cor status"></p>
+                    <div class="layui-row pdt10">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">订单号:</span> <span class="inline orderDetailId"></span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">下单时间:</span> <span class="inline orderDetailTime"></span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">订单类型:</span> <span class="inline serviceProType"></span>
+                        </div>
+                    </div>
+                    <div class="layui-row  pdt10">
+                        <div class='layui-col-xs10 text_left pdl10 '>
+                            <div class='xs3'>
+                                <p class="inline label">服务地址:</p>
+                            </div>
+                            <div class='layui-col-xs9' style='margin-top: 2px'>
+                                <p class="inline orderAddress "></p>
+                                <p class="inline info "></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">期望到达时间:</span> <span class="inline serTime"></span>
+                        </div>
+                    </div>
+                    <div class="layui-row  text_cen  sliptLine">
+                        <div class='layui-col-xs11 hg2 container'>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 hide">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">取消时间:</span> <span class="inline cancelTime"></span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 hide">
+                        <div class='xs3'>
+                            <p class="inline label">取消原因:</p>
+                        </div>
+                        <div class='layui-col-xs9' style='margin-top: 2px; text-align: left'>
+                            <p class="inline cancelReason info" style='text-align: left; padding-right: 10px'></p>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 mes cancel preOrder">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">商家名称:</span> <span class="inline storeName"></span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 mes cancel preOrder">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">商家电话:</span> <span class="inline storePhone"></span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 mes cancel preOrder">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">营业时间:</span> <span class="inline yyTime"></span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 mes cancel preOrder">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">商家地址:</span> <span
+                                class="inline storeAddress">555555555555</span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 mes cancel preOrder">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">服务人员名称:</span> <span
+                                class="inline serviceName">555555555555</span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 mes cancel preOrder">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">服务人员电话:</span> <span
+                                class="inline servicePhone">555555555555</span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 cencal">
+                        <div class='layui-col-xs10 text_cen pdl10'>
+                            <button type="button" id='cencal' class="layui-btn">取消订单</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='right pdt10 h100 boder box'>
+                    <!-- <script id="user-cell" type="text/html"> -->
+                    <div class='layui-row layui-col-xs10  pdt60 container bg-pic'>
+                        <div class='col30 th'>
+                            <img src='../../../../public/images/admin/one.png' />
+                            <span class="pdl10" style='color: #f47f3d;'>·····················&gt;</span>
+                        </div>
+                        <div class='col30 th'>
+                            <img src='../../../../public/images/admin/two.png' />
+                            <span class="pdl10" style='color: #f47f3d;'>·····················&gt;</span>
+                        </div>
+                        <div class='col30 th cancel'>
+                            <img src='../../../../public/images/admin/three.png' />
+                            <span class="pdl10" style='color: #f47f3d;'>·····················&gt;</span>
+                        </div>
+                        <div class='col16 th cancel'>
+                            <img src='../../../../public/images/admin/four.png' />
+                        </div>
+                    </div>
+                    <div class='layui-row layui-col-xs11 pdt120 container'>
+                        <div class='col31'>
+                            <p class="pdt5 text_left pdl45">待接单</p>
+                            <p class="text_left pdl10 orderTime"></p>
+                        </div>
+                        <div class='col31 '>
+                            <p class="pdt5 text_left pdl50 canceled">已接单</p>
+                            <p class="text_left pdl15 acceptTime"></p>
+                        </div>
+                        <div class='col31 '>
+                            <p class="pdt5 text_left pdl45 cancel">服务中</p>
+                            <p class="text_left pdl15 startTime"></p>
+                        </div>
+                        <div class='col20 cancel'>
+                            <p class="pdt5 pdl30">服务结束</p>
+                            <p class="text_cen pdl30 endTime"></p>
+                        </div>
+                    </div>
+                    <!--                         
+                            {{if status === '1'}}
+                                <div class='Instructions payment'>
+                                    <div class='list'>
+                                        <img src='../../../../public/images/1011.png'/>
+                                        <span>. . . . . . . . . . . . . . . . . . .</span>
+                                        <div class='text'>提交订单</div>
+                                    </div>
+                                    <div class='list'>
+                                        <img src='../../../../public/images/1022.png'/>
+                                        <span class='Hang'>. . . . . . . . . . . . . . . . . . .</span>
+                                        <div class='Pending'>待付款</div>
+                                    </div>
+                                    <div class='list'>
+                                        <img src='../../../../public/images/yes.png'/>
+                                        <div class='payyes'>交易完成</div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                            {{if status === '2'}}
+                                <div class='Instructions payment'>
+                                    <div class='list'>
+                                        <img src='../../../../public/images/1011.png'/>
+                                        <span>. . . . . . . . . . . . . . . . . . .</span>
+                                        <div class='text'>提交订单</div>
+                                    </div>
+                                    <div class='list'>
+                                        <img src='../../../../public/images/no.png'/>
+                                        <span class='Hang' style='color:#de141d !important;'>. . . . . . . . . . . . . . . . . . .</span>
+                                        <div class='Pending' style='left:0px !important'>待付款</div>
+                                    </div>
+                                    <div class='list'>
+                                        <img src='../../../../public/images/no.png'/>
+                                        <div class='payyes'>交易完成</div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        </script> -->
+                </div>
+                <div class="layui-row right mlt15  box ">
+                    <div class="layui-row text_cen pbg boder ">
+                        <div class='layui-col-xs bdr w16'>
+                            <h3 class="inline pd5">服务项</h3>
+                        </div>
+                        <div class='layui-col-xs bdr w16'>
+                            <h3 class="inline pd5">服务金额</h3>
+                        </div>
+                        <div class='layui-col-xs bdr hide w16 total-money'>
+                            <h3 class="inline pd5">总额</h3>
+                        </div>
+                        <div class='layui-col-xs bdr serviceTime w16'>
+                            <span class="popver serviceType"></span>
+                            <h3 class="inline serviceType pd5"></h3>
+                        </div>
+                        <div class='layui-col-xs bdr w16'>
+                            <h3 class="inline pd5">确认码</h3>
+                        </div>
+                        <div class='layui-col-xs w16'>
+                            <h3 class="inline pd5 sercise">确认订单二维码</h3>
+                        </div>
+                    </div>
+                    <div class="layui-row  boderlbr QrCode">
+                        <div class='layui-col-xs  QrCode bdr w16'>
+                            <div class="text_cen pdt40">
+                                <h3 class="inline serName"></h3>
+                            </div>
+                        </div>
+                        <div class='layui-col-xs QrCode bdr w16'>
+                            <div class="text_cen pdt40">
+                                <h3 class="inline cor serMoney"></h3>
+                            </div>
+                        </div>
+                        <div class='layui-col-xs QrCode bdr hide total-money w16'>
+                            <div class="text_cen pdt40">
+                                <h3 class="inline cor totalMoney"></h3>
+                            </div>
+                        </div>
+                        <div class='layui-col-xs QrCode bdr serviceTime w16'>
+                            <div class="text_cen pdt40">
+                                <h3 class="inline cor serviceProTime"></h3>
+                            </div>
+                        </div>
+                        <div class='layui-col-xs QrCode bdr w16'>
+                            <div class="text_cen pdt40">
+                                <h3 class="inline serCode"></h3>
+                            </div>
+                        </div>
+                        <div class='layui-col-xs QrCode w16' id='qrcode' style='padding-top: 10px'>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="b-left pdt10  boder preOrder cancel ordered served">
+                    <h3>评价信息</h3>
+                    <form class="layui-form  Appraise" onsubmit="return false" style='display: none'>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input type="radio" name="appraiseCode" value="0" title="满意" checked>
+                                <input type="radio" name="appraiseCode" value="1" title="一般">
+                                <input type="radio" name="appraiseCode" value="2" title="不满意">
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text" style='padding: 0 20px 15px 20px'>
+                            <div class="layui-input-block">
+                                <textarea name="message" lay-verify="message" lay-verType='tips'
+                                    placeholder="请输入评价内容(最多100个字)" maxlength=100 class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即评价</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="layui-row pdt10 Appraised">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label" style='color: #f47f3d;'>满意度:</span> <span
+                                class="inline appraiseCode" style='color: #f47f3d;'></span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 Appraised">
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">评价时间:</span> <span class="inline appraiseTime"
+                                style='color: #666'></span>
+                        </div>
+                    </div>
+                    <div class="layui-row pdt10 Appraised" style='margin-top: 15px'>
+                        <div class='layui-col-xs10 text_left pdl10'>
+                            <span class="inline label">评价内容:</span> <span class="inline appraiseMessage"
+                                style='color: #666'></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-right pdt10  boder cancel preOrder ordered serving">
+                    <h3>服务信息</h3>
+                    <p class='remark'></p>
+                    <div class="pic">
+                        <script id="pic-cell" type="text/html">
+                            {{each content as value i}}
+                            <img src="{{value}}" alt="">
+                            {{/each}}
+                            {{if content.length === 0}}
+                            <div class="nodata">
+                                <i class="iconfont TanSantishi"></i>暂无图片 ！
+                            </div>
+                            {{/if}}
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

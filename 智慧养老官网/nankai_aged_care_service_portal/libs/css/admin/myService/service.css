@@ -1,0 +1,177 @@
+body {
+    margin:0px;
+    padding: 0px;
+}
+
+.iframe_title {
+    height: 40px;
+    background: #fbfbfb;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    line-height: 40px;
+    color: #666;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.iframe_title h2 {
+    padding-right:20px;
+}
+
+.iframe_title h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+    vertical-align: top;
+}
+
+.iframe_title h2 .search {
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+    width: 20px;
+    text-align: center;
+}
+
+.iframe_title h2 p i {
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 39px;
+}
+
+.iframe_title h2 p a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.iframe_title h2 a {
+    display: inline-block;
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+    vertical-align: top;
+}
+
+.iframe_title h2 > i {
+    color: rgb(94, 94, 94);
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.iframe_title h2 input {
+    width: 20%;
+    height: 30px;
+    float: right;
+    line-height: 30px;
+    font-size:12px;
+    margin-top: 5px;
+    padding-right: 30px;
+}
+
+.templet {
+    text-align: center;
+    color: #666;
+    padding: 0px 20px;
+    margin-top: 20px;
+}
+
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.templet ul {
+    min-height: 900px;
+    position: relative;
+}
+
+.templet ul li {
+    border-bottom:1px solid #e7e7e7;
+    height: 130px;
+    padding:20px 0px;
+}
+
+.templet ul li a {
+    float: left;
+}
+
+.templet ul li a:nth-child(2) {
+    width: 550px;
+    text-align: left;
+}
+
+.templet ul li a button {
+    border: 1px solid #de141d;
+    color: #de141d;
+}
+
+.templet ul li a button:hover {
+    border: 1px solid #de141d;
+    color: #de141d;
+}
+
+.templet ul li img {
+    width: 120px;
+    height: 100px;
+    float: left;
+    margin-right: 20px;
+}
+
+.list_detils {
+    float: left;
+    width: 520px;
+    height: 100px;
+}
+
+
+.list_detils span {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    height: 40px;
+    text-align: left;
+    line-height: 40px;
+}
+
+.list_detils p {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: rgb(156, 156, 156);
+}
+
+.list_price {
+    float: right;
+    width: 180px;
+    height: 100px;
+}
+
+.list_price span {
+    display: block;
+    height: 50px;
+    line-height: 80px;
+}
+
+.list_price p {
+    display: block;
+    height: 50px;
+    line-height: 40px;
+    color: #de141d;
+}
+
+#laypage{
+    float: right;
+}

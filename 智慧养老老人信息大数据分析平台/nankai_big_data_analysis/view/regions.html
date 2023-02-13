@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>老人信息大数据分析平台</title>
+    <link href="../plugin/layui/css/layui.css" rel="stylesheet" type="text/css" />
+    <link href="../public/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../libs/css/regions.css" rel="stylesheet" type="text/css" />
+    <script src='../plugin/layui/layui.js' type='text/javascript'></script>
+    <script src="../plugin/echarts/echarts.min.js" type='text/javascript'></script>
+    <script src="../plugin/jQuery/jQuery.min.js"></script>
+    <script src='../public/js/root.js' type='text/javascript'></script>
+    <script src='../public/js/url.js' type='text/javascript'></script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="layui-row">
+                <div class="header">
+                    <div class="time-box">
+                      <span class="date"></span>
+                      <span class="time"></span>
+                    </div>
+                    <span class="title">南开区养老区域构成分析</span>
+                </div>
+                <div class="main-tab">
+                    <a href="./index.html"><span class="back"></span>返回首页</a>
+                    <a href="javascript:location.reload();"><span class="reload"></span>刷新</a>
+                </div>
+            </div>
+        </div>
+        <div class="tabLayui">
+            <div id="main" class="layui-row">
+                <div class="middle">
+                    <div class="height">
+                        <div class="layui-col-xs12">
+                            <div class="flex">
+                                <div>老年人年龄区域分布</div>
+                                <form class="layui-form" action="">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">年龄段：</label>
+                                        <div class="layui-input-inline">
+                                            <select id="ageRange" lay-filter="ageRange">
+                                                <option value="">请选择</option>
+                                                <option value="0">60-79岁</option>
+                                                <option value="1">80-89岁</option>
+                                                <option value="2">90-99岁</option>
+                                                <option value="3">100岁以上</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="heightEcharts" id="ageRangeEcharts"></div>
+                            <div class="ageRangeIsShow" id="ageRangeIsShow">暂无数据</div>
+                        </div>
+                    </div>
+                    <div class="height">
+                        <div class="layui-col-xs12">
+                            <div class="flex">
+                                <div>老年人自理能力区域分布</div>
+                                <form class="layui-form" action="">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">自理能力：</label>
+                                        <div class="layui-input-inline">
+                                            <select id="bodyId" lay-filter="bodyId">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="heightEcharts" id="countByBodyEcharts"></div>
+                            <div class="ageRangeIsShow" id="countByBodyIsShow">暂无数据</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="foot">
+                        <div class="title">居家和社区养老服务机构区域分布</div>
+                        <div class="layui-col-xs6">
+                            <div class="flex">
+                                <form class="layui-form" action="" style="margin-top: 1vh;">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="width: 100px;">服务机构：</label>
+                                        <div class="layui-input-inline">
+                                            <select id="type" lay-filter="type">
+                                                <option value="">请选择</option>
+                                                <option value="0">日照中心</option>
+                                                <option value="1">养老机构</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div style="height: 30vh;" id="countTypeEcharts"></div>
+                            <div class="countProjectIsShow" id="countTypeIsShow">暂无数据</div>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <div class="flex">
+                                <form class="layui-form" action="" style="margin-top: 1vh;">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">养老机构服务项目：</label>
+                                        <div class="layui-input-inline">
+                                            <select id="countProjectSelect" lay-filter="countProject">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div style="height: 30vh;" id="countProject"></div>
+                            <div class="countProjectIsShow" id="countProjectIsShow">暂无数据</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='../libs/js/regions.js' type='text/javascript'></script>
+</body>
+
+</html>

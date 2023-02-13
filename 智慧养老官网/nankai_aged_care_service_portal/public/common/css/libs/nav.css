@@ -1,0 +1,65 @@
+.layui-nav{
+    border-radius: 0px;
+    background-color: #f47f3d;
+    padding: 0px;
+}
+
+nav {
+    min-width: 1200px;
+    width: 100%;
+    background-color: #f47f3d;
+    margin: 0 auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+
+.layui-nav .layui-nav-item a {
+    color: white;
+    font-size: 16px;
+}
+
+.layui-nav .layui-nav-item {
+    margin-right: 25px;
+    line-height: 55px;
+}
+
+.layui-this {
+    background-color: #f47f3d;
+}
+
+.layui-selete {
+    /* padding: 0px 30px; */
+    background-color: #f47f3d;
+    font-size: 16px;
+}
+
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
+    width: 0px;
+    height: 0px;
+}
+
+.layui-nav .layui-nav-item:hover {
+    background-color: #eb6a1f;
+}
+
+.layui-nav-child {
+    background-color: #eb6a1f;
+    border: 1px solid #eb6a1f;
+    top: 60px;
+}
+
+.layui-nav-child > dd > a:hover{
+    background: #f2f2f3 !important;
+    color: #000 !important;
+}
+
+
+
+.layui-nav-item > .layui-this {
+    background: #eb6a1f !important;
+}
+
+/* .layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this {
+    background: #eb6a1f !important;
+} */

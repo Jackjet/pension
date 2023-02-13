@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<title>老人信息大数据分析平台</title>
+	<link href="../plugin/layui/css/layui.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/base.css" rel="stylesheet" type="text/css" />
+	<link href="../libs/css/agedOrganization.css" rel="stylesheet" type="text/css" />
+	<script src='../plugin/layui/layui.js' type='text/javascript'></script>
+	<script src="../plugin/echarts/echarts.min.js" type='text/javascript'></script>
+	<script src="../plugin/jQuery/jQuery.min.js"></script>
+	<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak="></script> -->
+	<!-- <script src='../plugin/offlineMap/index.js' type='text/javascript'></script> -->
+	<script src='../libs//mapTile/map3.0_init.js' type='text/javascript'></script>
+	<script src='../libs//mapTile/map3.0.js' type='text/javascript'></script>
+
+	<script src='../public/js/root.js' type='text/javascript'></script>
+	<script src='../public/js/url.js' type='text/javascript'></script>
+</head>
+
+<body>
+	<div class="box">
+		<div class="container">
+			<div class="layui-row">
+				<form class="layui-form" action="">
+					<div class="header">
+						<div class="time-box">
+							<span class="date"></span>
+							<span class="time"></span>
+						</div>
+						<span class="title">养老机构资源配置决策分析</span>
+					</div>
+				</form>
+				<div class="main-tab">
+					<a href="./index.html"><span class="back"></span>返回首页</a>
+					<a href="javascript:location.reload();"><span class="reload"></span>刷新</a>
+				</div>
+			</div>
+		</div>
+		<div class="tabLayui">
+			<div id="main" class="layui-row">
+				<div class="left">
+					<div class="left-min">
+						<div class="flex"
+							style="padding: 1vh;display: flex;justify-content: space-between;font-size:14px">
+							居家和社区养老机构区域分布
+							<form class="layui-form" action="">
+								<div class="layui-form-item" style="margin: 0;display: flex;align-items: center;">
+									<label class="layui-form-label"
+										style="width: 100px;line-height: 11px;">服务机构：</label>
+									<div class="layui-input-inline" style="width: 100px;color:black">
+										<select id="type" lay-filter="type" style="width: 100px;">
+											<option value="">请选择</option>
+											<option value="0">日照中心</option>
+											<option value="1">养老机构</option>
+										</select>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div>
+							<form class="layui-form" action="" style="margin-top: 1vh;">
+
+							</form>
+						</div>
+						<div style="height: 20vh;" id="countTypeEcharts"></div>
+						<div class="countProjectIsShow" id="countTypeIsShow">暂无数据</div>
+						<!-- <div class="content" id="streetList"></div>
+                        <div class="nodata" id="noNtreetList">暂无数据</div>
+                        <script id="street-tpl" type="text/html">
+                            {{# for(var i=0, len = d.length; i < len; i++ ){ }}
+                                <div class="street">
+                                    <div class="name">{{d[i].homeStreetName}}</div>
+                                    <div class="num">{{d[i].num}}人</div>
+                                </div>
+                            {{# } }}
+                        </script> -->
+					</div>
+					<div class="left-max">
+						<div class="flex" style="padding: 1.5vh;">
+							服务机构服务人员数量
+						</div>
+						<div class="list" id="list">
+						</div>
+						<div class="nodata" id="noList">暂无数据</div>
+						<script id="list-tpl" type="text/html">
+								{{# for(var i=0, len = d.length; i < len; i++ ){ }}
+                                <div class="item">
+                                    <div>{{d[i].name}}</div>
+                                    <div>{{d[i].num}}人</div>
+                                </div>
+                            {{# } }}
+                        </script>
+					</div>
+				</div>
+				<div class="right" style="padding: 5px;">
+					<!-- <img src="../libs/image/agedOrganizationRight.png" /> -->
+					<div style="height: 7%;display: flex;justify-content: flex-end;margin-right: 20px;">
+						<form class="layui-form" action="" style="margin-top: 1vh;">
+							<div class="layui-form-item" style="margin: 0;display: flex;align-items: center;">
+								<label class="layui-form-label"
+									style="width: 100px;line-height: 9px;color: white;">服务机构：</label>
+								<div class="layui-input-inline" style="width: 100px;">
+									<select id="type1" lay-filter="type1">
+										<option value="">请选择</option>
+										<option value="0">日照中心</option>
+										<option value="1">养老机构</option>
+									</select>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div id="allmap" style="height: 93%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src='../libs/js/agedOrganization.js' type='text/javascript'></script>
+</body>
+
+</html>

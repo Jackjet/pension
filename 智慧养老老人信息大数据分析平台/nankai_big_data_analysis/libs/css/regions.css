@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    overflow: hidden;
+    padding: 0;
+    font-family: Arial, 'Microsoft YaHei';
+    width: 100%;
+    height: 100%;
+    min-width: 1024px;
+    background: url("../image/banner.jpg") no-repeat;
+    background-size: 100% 100%;
+    filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='../image/banner.jpg', sizingMethod='scale');
+}
+
+/* 头 */
+.container {
+    width: 100%;
+    height: 6vh;
+    display: block;
+}
+
+/* 操作列 */
+.header {
+    width: 100%;
+    height: 6vh;
+    line-height: 6vh;
+    background-size: 100% 100%;
+    text-align: center;
+    position: absolute;
+    box-sizing: border-box;
+    display: table;
+}
+
+.header .title {
+    font-size: 3vh;
+    color: #7ee1e5;
+}
+
+.time-box {
+    position: absolute;
+    left: 2%;
+    top: 7%;
+    font-size: 2vh;
+    color: #87D8F3;
+}
+
+.time-box .time {
+    font-weight: bold;
+}
+
+.time-box .date {
+    margin-left: 1.5vh;
+    font-size: 2.3vh !important;
+}
+
+.main-tab {
+    position: absolute;
+    right: 2%;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 2vh;
+    color: #87D8F3;
+}
+
+.main-tab a {
+    color: #7ee1e5;
+}
+
+.back {
+    display: inline-block;
+    margin-right: 0.7vw;
+    margin-bottom: -0.7vh;
+    background: url('../image/index.png');
+    background-size: 100% 100%;
+    height: 20px;
+    width: 20px;
+}
+
+.reload {
+    display: inline-block;
+    margin-left: 1vw;
+    margin-right: 0.7vw;
+    margin-bottom: -0.7vh;
+    background: url('../image/reload.png');
+    background-size: 100% 100%;
+    height: 20px;
+    width: 20px;
+}
+
+/* 主体 */
+#main {
+    height: calc(100% - 11vh);
+    margin-top: 6vh;
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    width: 98vw;
+    height: 100%;
+    margin-top: 0.05rem;
+}
+
+.height {
+    margin: 0 2vh;
+    width: 45vw;
+    height: 40vh;
+    background: url("../image/regionsMin.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 底部 */
+.foot {
+    margin-top: 4vh;
+    width: 92vw;
+    height: 41vh;
+    background: url("../image/regionsBottom.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.foot .title {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    color: #fff;
+    line-height: 4vh;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    color: #fff;
+    line-height: 4vh;
+}
+
+.layui-form-item {
+    margin-bottom: 0;
+}
+
+.layui-form-label {
+    padding: 0 !important;
+    width: 160px;
+    line-height: 4vh;
+}
+
+.layui-input {
+    height: 4vh;
+    line-height: 4vh !important;
+    background-color: #131843;
+    border: 0;
+    color: #fff;
+}
+
+.layui-form-select dl dd {
+    color: #000;
+}
+
+.layui-form-select dl dd:hover {
+    background: #25679d;
+}
+
+.layui-form-select dl dd.layui-this {
+    background: #25679d !important;
+}
+
+.layui-form-item .layui-input-inline {
+    width: 115px !important;
+}
+
+.heightEcharts {
+    height: 35vh;
+}
+
+.ageRangeIsShow {
+    line-height: 35vh;
+    color: #fff;
+    text-align: center;
+    display: none;
+}
+
+.countProjectIsShow {
+    line-height: 30vh;
+    color: #fff;
+    text-align: center;
+    display: none;
+}

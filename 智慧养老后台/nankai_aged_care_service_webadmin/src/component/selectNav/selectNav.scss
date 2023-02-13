@@ -1,0 +1,117 @@
+.main {
+  // background: url(../../assets/image/bag.jpg) no-repeat;
+  background: url(../../assets/image/back.gif) no-repeat;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  -ms-overflow-style: none;
+  .head {
+    position: relative;
+    margin: 2vh 5vh;
+    color: white;
+    .date{
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      font-size: 1vh;
+    }
+    .title {
+      text-align: center;
+      font-size: 4vh;
+      font-family: '微软雅黑';
+      line-height: 4vh;
+      font-weight: 600;
+      text-shadow:#1D85D6 0 0 10px;
+      vertical-align: top;
+    }
+  }
+  .content{
+    padding: 16vh 3vh 3vh;
+    height: 93vh;
+    .top{
+      width: 12vw;
+      margin: 0 auto;
+      cursor: pointer;
+      .title{
+        position: relative;
+        margin: 0 auto;
+        width: 10vw;
+        height: 5vh;
+        line-height: 5vh;
+        background: url(../../assets/image/off-title.png) no-repeat;
+        background-size: 100% 100%;
+        font-size: 2vh;
+        color: #fff;
+      }
+      img{
+        width: 12vw;
+        height: 25vh;
+      }
+      &:hover{
+        .title{
+          background: url(../../assets/image/on-title.png) no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+    }
+    .middle{
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: -14vh;
+      .item{
+        width: 20vw;
+        margin: 0 auto;
+        cursor: pointer;
+        .title{
+          position: relative;
+          margin: 0 auto;
+          width: 13vw;
+          height: 5vh;
+          line-height: 5vh;
+          background: url(../../assets/image/off-title.png) no-repeat;
+          background-size: 100% 100%;
+          font-size: 2vh;
+          color: #fff;
+        }
+        img{
+          width: 20vw;
+          height: 39vh;
+        }
+        &:hover{
+          .title{
+            background: url(../../assets/image/on-title.png) no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+      }
+    }
+    .bottom{
+      width: 20vw;
+      margin: 0 auto;
+      margin-top: -30vh;
+      cursor: pointer;
+      .title{
+        position: relative;
+        margin: 0 auto;
+        width: 15vw;
+        height: 5vh;
+        line-height: 5vh;
+        background: url(../../assets/image/off-title.png) no-repeat;
+        background-size: 100% 100%;
+        font-size: 2vh;
+        color: #fff;
+      }
+      img{
+        width: 20vw;
+        height: 39vh;
+      }
+      &:hover{
+        .title{
+          background: url(../../assets/image/on-title.png) no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+}

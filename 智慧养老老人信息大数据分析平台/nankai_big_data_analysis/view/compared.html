@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>老人信息大数据分析平台</title>
+    <link href="../plugin/layui/css/layui.css" rel="stylesheet" type="text/css" />
+    <link href="../public/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../libs/css/compared.css" rel="stylesheet" type="text/css" />
+    <script src='../plugin/layui/layui.js' type='text/javascript'></script>
+    <script src="../plugin/echarts/echarts.min.js" type='text/javascript'></script>
+    <script src="../plugin/jQuery/jQuery.min.js"></script>
+    <script src='../public/js/root.js' type='text/javascript'></script>
+    <script src='../public/js/url.js' type='text/javascript'></script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="layui-row">
+                <form class="layui-form" action="">
+                    <div class="header">
+                        <div class="time-box">
+                          <span class="date"></span>
+                          <span class="time"></span>
+                        </div>
+                        <span class="title">南开区养老同比环比分析</span>
+                        <div class="yearbox">
+                            <span class="year-title">同比年份</span>
+                            <div class="layui-input-inline">
+                                <select id="year" lay-filter="year">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="main-tab">
+                    <a href="./index.html"><span class="back"></span>返回首页</a>
+                    <a href="javascript:location.reload();"><span class="reload"></span>刷新</a>
+                </div>
+            </div>
+        </div>
+        <div class="tabLayui">
+            <div id="main" class="layui-row">
+                <div class="middle">
+                    <div class="height">
+                        <div class="layui-col-xs12">
+                            <div class="flex">
+                                <div><span class="year"></span>年老人数量同比</div>
+                            </div>
+                            <div class="heightEcharts" id="agedNumber"></div>
+                            <div class="isShow" id="agedNumberIsShow">暂无数据</div>
+                        </div>
+                    </div>
+                    <div class="height">
+                        <div class="layui-col-xs12">
+                            <div class="flex">
+                                <div><span class="year"></span>年服务需求数量同比</div>
+                            </div>
+                            <div class="heightEcharts" id="serveDemand"></div>
+                            <div class="isShow" id="serveDemandIsShow">暂无数据</div>
+                        </div>
+                    </div>
+                    <div class="height">
+                        <div class="layui-col-xs12">
+                            <div class="flex">
+                                <div><span class="year"></span>年服务质量环比</div>
+                            </div>
+                            <div class="heightEcharts" id="serveAppraise"></div>
+                            <div class="isShow" id="serveAppraiseIsShow">暂无数据</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="height">
+                        <div class="layui-col-xs12">
+                            <div class="flex">
+                                <div><span class="year"></span>年服务商数量同比</div>
+                            </div>
+                            <div class="heightEcharts" id="serveNumber"></div>
+                            <div class="isShow" id="serveNumberIsShow">暂无数据</div>
+                        </div>
+                    </div>
+                    <div class="height">
+                        <div class="layui-col-xs12">
+                            <div class="flex">
+                                <div><span class="year"></span>年服务商人员数量同比</div>
+                            </div>
+                            <div class="heightEcharts" id="serveEmpNumber"></div>
+                            <div class="isShow" id="serveEmpNumberIsShow">暂无数据</div>
+                        </div>
+                    </div>
+                    <div class="height">
+                        <div class="layui-col-xs12">
+                            <div class="flex">
+                                <div><span class="year"></span>年服务商人员数量环比</div>
+                            </div>
+                            <div class="heightEcharts" id="serveEmployNumber"></div>
+                            <div class="isShow" id="serveEmployNumberIsShow">暂无数据</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='../libs/js/compared.js' type='text/javascript'></script>
+</body>
+
+</html>

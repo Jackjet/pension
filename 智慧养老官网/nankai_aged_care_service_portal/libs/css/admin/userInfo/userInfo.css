@@ -1,0 +1,32 @@
+.enterprise {
+    padding: 20px;
+    width: 77%;
+}
+
+.enterprise h2 {
+    color: #f47f3d;
+    font-weight: 600;
+    display: inline-block;
+    height: 33px;
+    border-bottom: 3px solid #f47f3d;
+}
+
+#Form {
+    margin: 20px auto;
+    width: 60%;
+}
+
+.user {
+    width: 65%;
+}
+
+b {
+    color: red;
+}
+
+.enterprise .layui-input-block{
+    margin-left: 120px;
+}
+.layui-form-label{
+    width: 90px;
+}

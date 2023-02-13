@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <title>监督管理服务平台</title>
+  <link href="../plugin/layui/css/layui.css" rel="stylesheet" type="text/css" />
+  <link href="../public/css/base.css" rel="stylesheet" type="text/css" />
+  <link href="../libs/css/index.css" rel="stylesheet" type="text/css" />
+  <script src='../plugin/layui/layui.js' type='text/javascript'></script>
+  <script src="../plugin/jQuery/jQuery.min.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+     * @ pwidth 设计稿的宽度
+     * @ prem 你要1rem比多少px  我的是1rem比100px
+     * */
+    (function (doc, win, pwidth, prem) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          docEl.style.fontSize = clientWidth / pwidth * prem + 'px';
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window, 3840, 100);
+
+  </script>
+  <div class="box" style="position: absolute;">
+    <div class="container">
+      <div class="layui-row">
+        <div class="header">
+          <div class="time-box">
+            <span class="date"></span>
+            <span class="time"></span>
+          </div>
+          <div class="title">监督管理服务平台</div>
+        </div>
+        <div class="main-tab">
+          <a href="javascript:;" id="outLogin"><span class="back"></span>退出登录</a>
+        </div>
+      </div>
+    </div>
+    <div class="btnContent" style="margin-top: 70px;">
+      <!-- <div class="flex">
+        <img src="../libs/image/titleLeft.png" />
+        <div class="title">监督管理服务平台</div>
+        <img src="../libs/image/titleRight.png" />
+      </div> -->
+      <div class="btn-box flex">
+        <!-- <div class="btn-bag">
+          <a href="http://39.102.73.127/nankai/monitor/index.html">
+            <div class="btn-icon">
+              <img class="iocn" src="../libs/image/regionsIcon.png" />
+            </div>
+            <div class="btn-name" style="margin-top: 0;">视频监控</div>
+          </a>
+        </div> -->
+        <div class="btn-bag">
+          <a href="#" onclick="changeClickHttp('./IntelligentMattress.html')">
+            <div class="btn-icon">
+              <img class="iocn" src="../libs/image/comparedIcon.png" />
+            </div>
+            <div class="btn-name">智能床垫</div>
+          </a>
+        </div>
+        <div class="btn-bag">
+          <a href="#" onclick="changeClickHttp('./infrared.html')">
+            <div class="btn-icon">
+              <img class="iocn" src="../libs/image/agedServiceIcon.png" />
+            </div>
+            <div class="btn-name">红外感应</div>
+          </a>
+        </div>
+        <div class="btn-bag">
+          <a href="#" onclick="changeClickHttp('./smokeSensation.html')">
+            <div class="btn-icon">
+              <img class="iocn" src="../libs/image/agedOrganizationIcon.png" />
+            </div>
+            <div class="btn-name">烟感</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="btnContent">
+      <!-- <div class="flex">
+        <img src="../libs/image/titleLeft.png" />
+        <div class="title">监督管理服务平台</div>
+        <img src="../libs/image/titleRight.png" />
+      </div> -->
+      <div class="btn-box flex">
+        <div class="btn-bag">
+          <a href="#" onclick="alert('开发中请期待')">
+            <div class="btn-icon">
+              <img class="iocn" src="../libs/image/agedServiceIcon.png" />
+            </div>
+            <div class="btn-name">智能手表</div>
+          </a>
+        </div>
+        <div class="btn-bag">
+          <a href="#" onclick="alert('开发中请期待')">
+            <div class="btn-icon">
+              <img class="iocn" src="../libs/image/agedOrganizationIcon.png" />
+            </div>
+            <div class="btn-name">智能手环</div>
+          </a>
+        </div>
+        <div class="btn-bag">
+          <a href="#" onclick="alert('开发中请期待')">
+            <div class="btn-icon">
+              <img class="iocn" src="../libs/image/agedOrganizationIcon.png" />
+            </div>
+            <div class="btn-name">智能毛毯</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function changeClickHttp(url) {
+      window.open(url);
+    }
+    layui.config({
+      base: '../libs/js/'
+    }).use(['common'], function () {
+      var common = layui.common;
+      common.getSystemTime();
+      // 退出登录
+      $('#outLogin').click(function () {
+        $.cookie('currentDataUser', 'null', {
+          path: '/',
+        });
+        window.localStorage.setItem('currentDataUser', 'null');
+        window.location.href = './login.html';
+      })
+      // 管理端进入
+      var storage = window.localStorage.getItem('currentDataUser');
+      if (storage && storage != 'null') {
+        $.cookie('currentDataUser', storage, {
+          path: '/',
+        })
+      }
+      // 直接打开
+      if (!$.cookie('currentDataUser') || $.cookie('currentDataUser') == 'null') {
+        window.location.href = 'login.html';
+      }
+    })
+  </script>
+</body>
+
+</html>

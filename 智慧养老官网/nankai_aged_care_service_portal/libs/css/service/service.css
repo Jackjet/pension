@@ -1,0 +1,156 @@
+body {
+    background-color: #f6f7fb;
+}
+
+*{
+    box-sizing: border-box;
+}
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.item_data {
+    cursor: pointer;
+}
+
+.hot {
+    position: relative;
+    min-height: 560px;
+}
+
+.pd20 {
+    padding: 20px;
+}
+
+.layui-main2 {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    min-width: 1200px;
+    min-height: 500px;
+    overflow: hidden;
+}
+.h100{
+    height: 100%;
+}
+.pl20{
+    padding-left: 20px;
+}
+
+.service-header{
+    height: 230px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid #FF6600; */
+}
+
+.pj_list li{
+    height: 120px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.pj_list{
+    min-height: 200px;
+}
+.service-header h2{
+    height: 50px; 
+    font-weight: bold;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    /* line-height: 60px; */
+}
+
+.p50{
+    height: 50px; 
+    line-height: 25px;
+    /* font-weight: bold; */
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.over-hid{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-overflow: -o-ellipsis-lastline;
+}
+.lh30{
+    line-height: 30px;
+    height: 30px;
+}
+.hr{
+    height: 1px;
+    background-color: #DDDDDD;
+}
+
+.wd5{
+    float: left;
+    width: 5%
+}
+
+.wd95{
+    float: left;
+    width: 95%
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.fs12{
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+}
+.appraise{
+    color: #FF2C2C;
+    width: 40px;
+    /* height: 20px; */
+    /* line-height: 20px; */
+    text-align: center;
+    font-size: 7px;
+    background-color: #FFEBEB;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.appraisey{
+    color: #FFA415;
+    width: 40px;
+    /* height: 20px; */
+    /* line-height: 20px; */
+    text-align: center;
+    font-size: 7px;
+    background-color: #FFF5D7;
+    padding: 2px;
+    border-radius: 2px;
+
+}
+.appraisen{
+    color: #45B7FF;
+    width: 40px;
+    /* height: 20px; */
+    /* line-height: 20px; */
+    text-align: center;
+    font-size: 7px;
+    background-color: #E7F4FF;
+    padding: 2px;
+    border-radius: 2px;
+}

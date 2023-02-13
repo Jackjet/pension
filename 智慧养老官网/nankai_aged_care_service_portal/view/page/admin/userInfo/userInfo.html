@@ -1,0 +1,77 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-11 16:46:40
+ * @LastEditTime: 2020-05-14 09:41:11
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \nankai_aged_care_service_portal\view\page\admin\userInfo\userInfo.html
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+     <link href="../../../../libs/css/admin/userInfo/userInfo.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+     <script type='text/javascript' src='../../../../libs/js/admin/userInfo/userInfo.js'></script>
+    <title></title>
+</head>
+<body>
+    <div class="layui-row">
+        <div class="layui-col-xs12 login_bg">
+            <div class='layui-main'>
+                <div class='enterprise'>
+                    <h2>用户信息</h2>
+                    <form class="layui-form" action="" id='Form'>
+                        <div class="layui-form-item user">
+                            <label class="layui-form-label">姓名<b>*</b></label>
+                            <div class="layui-input-block">
+                                <input name='name' type="text" required lay-verType='tips' lay-verify="name" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" id="area-picker">
+                            <div class="layui-form-label">服务地<b>*</b></div>
+                            <div class="layui-input-inline" style="width: 126px;">
+                                <input name='contact' type="text"  disabled value='南开区'  autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-input-inline" style="width: 129px;">
+                                <select name="province" class="province-selector" required lay-verify="street" data-value="" lay-filter="province1">
+                                    <option value="">请选择街道</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline" style="width: 129px;">
+                                <select name="prcityovince" class="city-selector" lay-verify="community" required data-value="" >
+                                    <option value="">请选择社区</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">服务详细地址<b>*</b></label>
+                            <div class="layui-input-block">
+                                <textarea name='address' required  lay-verType='tips' lay-verify="address" required placeholder="例：天津市南开区红旗南路263号" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"></label>
+                            <div class="layui-input-block Submitbutton">
+                                <button type="button" class="layui-btn" lay-submit lay-filter="Submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>   
+        </div>
+  
+    </div>
+</body>
+</html>
